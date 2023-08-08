@@ -1,0 +1,334 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  A bright and image filled report style, currently set up here for use with ILM report 8600-219.
+%  Contains all that is required, glossaries, content management, references and good looks.
+%
+% The original template (the Legrand Orange Book Template) can be found here --> http://www.latextemplates.com/template/the-legrand-orange-book
+% Original author of the Legrand Orange Book Template:
+% Mathias Legrand (legrand.mathias@gmail.com) 
+%
+% Modifications made for ILM specific reporting
+% 
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% How to use this
+%
+% Upload a file called FrontCover.jpg to become your new front cover - into the Pictures folder
+% Upload files called Heading1.jpg, Heading2.jpg etc to become your new chapter headers - into the Pictures folder
+% Make sure these images are the right size to fit their locations and use good quality images
+%
+% Locate the variables below and set your name, title etc.
+%
+% If you want to change text colour on the front cover, the areas required are commented below
+% If you want to modify text and border colours for your chapter headers go into the structure.tex file and replace the name of the colour (set to ) with a new colour name (find and replace ctrl+f will do this for you).
+%
+% Add all references into references.bib
+% Cite these references by using \cite{referenceName}
+%
+% Commonly used acronyms or industry specific terms should be added to the glossary
+% These terms may then be referenced in the text using \gls{termName}
+%
+% Finally put some answers in there!
+%
+% 
+% Note: This template is set up specifically for ILM reports, it can be modified for other forms of reports
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ 
+ 
+%----------------------------------------------------------------------------------------
+%	SET THESE VARIABLES!
+%----------------------------------------------------------------------------------------
+
+\def\mytitle{ Vectorial Calculus } % Title of the ILM project
+\def\ILMCode{Adbridged, it seems.} % Unique code for the ILM project
+
+\def\author{Jaime Andres Torres B.} % Your name.. 
+\def\id{github.com/XaurDesu} % Your unique identifier
+
+\def\date{\today } % Today's date 
+
+
+ 
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[11pt,fleqn]{book} % Default font size and left-justified equations
+
+\usepackage[dvipsnames]{xcolor}
+
+\input{structure} % Insert the commands.tex file which contains the majority of the structure behind the template
+
+\makeglossaries
+
+%--------------------------------------------------------------------------
+
+% Glossary entries
+
+%--------------------------------------------------------------------------
+\newglossaryentry{ETN}
+{
+    name = {Example Term Name (ETN)},
+    description = {What does this term mean? Any examples of it? Further reading? References?}
+}
+
+%--------------------------------------------------------------------------
+
+% Document begins here
+
+%--------------------------------------------------------------------------
+
+\begin{document}
+\renewcommand{\bibname}{References} % Adds in the link to your references
+
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\begingroup
+\thispagestyle{empty}
+\AddToShipoutPicture*{\put(0,0){\includegraphics{Pictures/FrontCover.jpg}}} % Image background
+\centering
+\vspace*{11.3cm}
+\par\normalfont\fontsize{35}{35}\sffamily\selectfont
+
+\begin{center}
+    % List of Latex Colour names here: https://www.overleaf.com/learn/latex/Using_colours_in_LaTeX
+    \textbf{\color{Apricot} \mytitle}  % Modify the name of the colour used to suit your image
+    
+    \textbf{\color{White}(\ILMCode)} % Modify the name of the colour used to suit your image
+    
+    \color{black}ILM\par % Modify the name of the colour used to suit your image
+    
+    \vspace*{0.5cm}
+    \color{Apricot}\author % Modify the name of the colour used to suit your image
+    
+    (\id)\par  
+\end{center}
+
+\endgroup
+
+%----------------------------------------------------------------------------------------
+%	COPYRIGHT PAGE
+%----------------------------------------------------------------------------------------
+
+
+\newpage
+~\vfill
+\thispagestyle{empty}
+
+\noindent \textbf{Vectorial Calculus - }
+\vspace{0.5cm}
+
+\noindent 
+\vspace{1cm}
+
+\noindent \textit{First release, \date} % Printing/edition date
+
+%----------------------------------------------------------------------------------------
+%	TABLE OF CONTENTS
+%----------------------------------------------------------------------------------------
+
+\chapterimage{Heading1.jpg} % Table of contents heading image
+
+\pagestyle{empty} % No headers
+
+\tableofcontents % Print the table of contents itself
+
+%\listoftables %uncomment this if you want to print the list of tables at the start
+
+\pagestyle{fancy} % Print headers again
+
+
+%----------------------------------------------------------------------------------------
+%	Glossary
+%----------------------------------------------------------------------------------------
+
+\chapterimage{Heading1.jpg} % Table of contents heading image
+
+\printglossaries
+
+
+
+%----------------------------------------------------------------------------------------
+%	First set of related questions
+%----------------------------------------------------------------------------------------
+
+\chapterimage{Heading2.jpg}
+\chapter{Introduction}
+
+\begin{flushright}
+    \textit{Go big or go home.}
+\end{flushright}
+
+Vectorial calculus is what the title says pretty much, the act of using methods
+proper to calculus on vectorial spaces, for the topic of this class generally referring to
+merely 3-dimensional ones, at the end of this book you should be able to:
+
+\begin{itemize}
+    \item 
+\end{itemize}
+
+\vspace{20px}
+\vspace{0.5cm} % Adds some vertical whitespace, easier to read
+
+%--------------------------------------------------------------
+%	More sections?
+%----------------------------------------------------------------------------
+
+\chapter{Linear Algebra Concepts}
+\section{Vectors on a three-dimensional space.}
+
+given an $ \mathbb{R}^3 $ space and a point in that space $ P = (a,b,c) $,
+we can describe a vector by either connecting the point $ P $ to another point $ Q $, or
+by assuming the origin of this space (point $ (0,0,0) $), this is a mathematical object with both a
+direction and a magnitude. The direction is given by an angle and the 
+magnitude is given by 
+
+%$\sqrt{a_1^2 + a_2^2 + a_3^2}$%
+
+
+\subsection{Addition and Subtraction}
+
+We can take any $ \vec{a} $ and $ \vec{b} $ vectors on the same space and add them to each other
+in the form:
+
+\begin{equation}
+    \begin{bmatrix}
+        a_1 \\
+        a_2 \\
+        a_3 \\
+    \end{bmatrix}
+    +
+    \begin{bmatrix}
+        b_1 \\
+        b_2 \\
+        b_3 \\
+    \end{bmatrix}
+    = 
+    \begin{pmatrix}
+        a_1 + b_1\\
+        a_2 + b_2\\
+        a_3 + b_3\\
+    \end{pmatrix}
+\end{equation}
+
+Such form remains in the case we can do subtraction, which is expressed on the equation:
+
+\begin{equation}
+    \begin{bmatrix}
+        a_1 \\
+        a_2 \\
+        a_3 \\
+    \end{bmatrix}
+    -
+    \begin{bmatrix}
+        b_1 \\
+        b_2 \\
+        b_3 \\
+    \end{bmatrix}
+    = 
+    \begin{pmatrix}
+        a_1 - b_1\\
+        a_2 - b_2\\
+        a_3 - b_3\\
+    \end{pmatrix}
+\end{equation}
+
+This kind of operations have certain properties, shown as:
+\begin{gather}
+    (\alpha + \beta)\vec[v] = \alpha\vec{v} + \beta\vec{v} \\
+    \vec{v} * 1 = \vec{v} \\
+    \vec{v} * \vec{0} = \vec{0} \\
+    \beta \vec{v} = 
+    \begin{pmatrix}
+        \beta a_1\\
+        \beta a_2\\
+        \beta a_3\\
+    \end{pmatrix}
+\end{gather}
+
+Two vectors $ \vec{a} $ and $ \vec{b} $ are equal if and only if:
+\begin{equation}
+    \begin{cases}
+        \vec{a} \exists \mathbb{R}^3 \\
+        \vec{b} \exists \mathbb{R}^3
+    \end{cases}
+    \implies
+    \begin{pmatrix}
+        a_1 = b_1\\
+        a_2 = b_2\\
+        a_3 = b_3\\
+    \end{pmatrix}
+    \text{
+        \textit{note: this can be generalized}}
+\end{equation}
+
+in either case,  $ \vec{0} $ is the identity of the operation, therefore:
+\begin{equation}
+    \vec{a} + \vec{0} = \vec{a}
+\end{equation}
+
+
+\subsection{Bases}
+
+A base in $ R^n $ can be found though $ n $ vectors on that plane, such as it 
+would happen in $ R^2 $ with:
+
+\begin{equation}
+    \lambda \vec{u} + \mu \vec{v}| \lambda , \mu \exists \mathbb{R}
+\end{equation}
+
+this equation will form a parallelogram that can express the distorsion of space when
+compared to a reference system, which generally is the canonical base formed by the identity.
+
+\section{Vector operations}
+
+In general, most of the parts of linear algebra that concern us are those regarding
+vectors. 
+
+\subsection{Dot product}
+Assume two equal-length vectors of the sort:
+\begin{equation}
+    \begin{cases}
+       \vec{a} = (a_i * n | n \exists \mathbb{R}); |\vec{a}| \exists \mathbb{R}  \\
+       \vec{b} = (b_i * n | n \exists \mathbb{R}); |\vec{b}| \exists \mathbb{R} 
+    \end{cases}
+\end{equation}
+
+in case we wanted to do obtain a scalar number, that corresponded to the sum of the internal products
+we could obtain:
+
+\begin{equation}
+    A * B = |\vec{A}| * |\vec{B}| * \cos \theta
+\end{equation}
+
+where $ \theta $ is the angle between both vectors.
+
+
+\subsection{Cross product}
+
+\section{Describing objects in a space.}
+
+% Simply upload additional images Heading5.jpg, Heading6.jpg etc. into the pictures folder
+
+% \chapterimage{Heading5.jpg}
+% \chapter{Third Set of Questions}
+
+
+%----------------------------------------------------------------------------------------
+%	References
+%----------------------------------------------------------------------------------------
+
+\chapterimage{Heading4.jpg} % Chapter heading image
+
+\bibliographystyle{plain} % Change this to IEEE or Harvard etc.
+\bibliography{references}
+
+
+\end{document}

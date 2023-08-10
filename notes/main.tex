@@ -190,7 +190,25 @@ by assuming the origin of this space (point $ (0,0,0) $), this is a mathematical
 direction and a magnitude. The direction is given by an angle and the 
 magnitude is given by $\sqrt{a_1^2 + a_2^2 + a_3^2}$
 
+As an example, let's assume the vector given by $ P = (1,2,1) $:
+\begin{center}
+    \includegraphics[scale=0.35]{vector_1.png}
 
+    \textit{Vector formed by $ P = (1,2,1) $}
+\end{center}
+
+For this vector, we can calculate the magnitude by replacing the vectorial components by 
+the magnitudes of the individual directions, resulting in:
+
+%\begin{gather}
+ %    \sqrt{1^2 + 2^2 + 1^2} \\
+%
+ %    \sqrt{1+4+1} \\
+  %  
+   %  \sqrt{6} \\
+%\end{gather}
+
+\textit{Note, in this course we will be mostly only concerned with }$ \mathbb{R}^3 $
 \subsection{Addition and Subtraction}
 
 We can take any $ \vec{a} $ and $ \vec{b} $ vectors on the same space and add them to each other
@@ -301,14 +319,56 @@ we could obtain:
     A * B = |\vec{A}| * |\vec{B}| * \cos \theta
 \end{equation}
 
-where $ \theta $ is the angle between both vectors.
 
+where $ \theta $ is the angle between both vectors. We can get it by calculating
+
+$$ \cos \theta = \frac{\vec{u}*\vec{v}}{||\vec{u}||*||\vec{u}||} $$
+
+If perpendicular, we can assume:
+
+$$ \vec{u} * \vec{v} = 0 $$
 
 \subsection{Cross product}
 
-A cross product is a
+A cross product is, much like the dot product, an operation that seeks to multiply the values between
+two vectors. it can be annotated as:
+
+\begin{gather}
+    \vec{u} \text{x} \vec{v} = 
+    \begin{pmatrix}
+        u_1 \\
+        u_2 \\
+        u_3 \\
+    \end{pmatrix}
+    *
+    \begin{pmatrix}
+        v_1\\
+        v_2\\
+        v_3\\ 
+    \end{pmatrix}
+    =
+\end{gather}
+
+This is a non-commutative operation, changing the order of signs will cause the signs to invert,
+seen mathematically as:
+
+$$ \vec{u} x \vec{v} = -(\vec{v} x \vec{u}) $$
 
 \section{Describing objects in a space.}
+So far we've been mostly concerned with planes and 
+
+\subsection{lines}
+
+A line is a geometrical object of the form:
+
+\begin{equation}
+    r(t) = t \vec{v} + P, t \exists \mathbb{R}
+\end{equation}
+
+\paragraph*{Find the equation of the line that joins points $P=(1,2,1)$ and
+$ P=(-1,3,4) $}
+
+\chapter{Functions}
 
 % Simply upload additional images Heading5.jpg, Heading6.jpg etc. into the pictures folder
 

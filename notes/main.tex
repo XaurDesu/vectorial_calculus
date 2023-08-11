@@ -316,17 +316,74 @@ in case we wanted to do obtain a scalar number, that corresponded to the sum of 
 we could obtain:
 
 \begin{equation}
-    A * B = |\vec{A}| * |\vec{B}| * \cos \theta
+    A \centerdot B = ||\vec{A}|| ||\vec{B}||  \cos \theta
 \end{equation}
+
+for cartesian vectors, we can write this as:
+\begin{gather}
+    \vec{a} \centerdot \vec{b} = 
+    \begin{pmatrix}
+        a_1 \\
+        a_2 \\
+        a_3
+    \end{pmatrix}
+    \centerdot
+    \begin{pmatrix}
+        b_1 \\
+        b_2 \\
+        b_3
+    \end{pmatrix}
+    = a_1 b_1 + a_2 b_2 + a_3 b_3 \exists \mathbb{R}
+\end{gather}
 
 
 where $ \theta $ is the angle between both vectors. We can get it by calculating
 
-$$ \cos \theta = \frac{\vec{u}*\vec{v}}{||\vec{u}||*||\vec{u}||} $$
+$$ \cos \theta = \frac{\vec{u} x \vec{v}}{||\vec{u}||*||\vec{u}||} $$
 
 If perpendicular, we can assume:
 
-$$ \vec{u} * \vec{v} = 0 $$
+$$ \vec{u} \centerdot \vec{v} = 0 $$
+
+\subsubsection{Notable cases.}
+
+With these rules, we can infere a few interesting cases, which we'll be able to interpolate stuff with.
+
+\paragraph*{Implications}
+
+\begin{itemize}
+    \item $ \theta < \frac{\pi}{2} \implies \cos \theta > 0 $
+    \item $ \theta > \frac{\pi}{2} \implies \cos \theta < 0 $
+    \item $ \theta = \frac{\pi}{2} \implies \cos \theta = 0$
+\end{itemize}
+
+\paragraph{Addendum: cosine values}
+
+In vectorial calculus, we'll have certain notable angles that will appear often in exercises.
+we can use fractions to get them approximated to numerical values, such values are listed on this table:
+
+\begin{center}
+    \begin{tabular}{||c c c||} 
+     \hline
+     $ \cos 0^o $ & $ \frac{4}{\sqrt{2}} $ & 1\\ [0.5ex] 
+     \hline
+     $ \cos 30^o $ & $ \frac{3}{\sqrt{2}} $ & ?\\ [0.5ex] 
+     \hline
+     $ \cos 45^o $ & $ \frac{2}{\sqrt{2}} $ & ?\\ [0.5ex] 
+     \hline
+     $ \cos 60^o $ & $ \frac{1}{\sqrt{2}} $ & $ \frac{1}{2} $\\ [0.5ex] 
+     \hline
+     $ \cos 0^o $ & $ \frac{0}{\sqrt{2}} $ & 0\\ [0.5ex] 
+     \hline
+    
+    \end{tabular}
+    \end{center}
+
+\paragraph*{Addendum 2: Triangular inequality}
+
+The triangular inequality affirms that:
+
+$ ||\vec{u}+\vec{v}|| \le ||\vec{u}||+||\vec{v}|| $
 
 \subsection{Cross product}
 
@@ -347,6 +404,11 @@ two vectors. it can be annotated as:
         v_3\\ 
     \end{pmatrix}
     =
+    \begin{pmatrix}
+        u_2 v_3 - u_3 v_2\\
+        u_3 v_1 - v_1 u_3\\
+        u_1 v_2 - u_2 v_1 \\ 
+    \end{pmatrix}
 \end{gather}
 
 This is a non-commutative operation, changing the order of signs will cause the signs to invert,
@@ -354,10 +416,28 @@ seen mathematically as:
 
 $$ \vec{u} x \vec{v} = -(\vec{v} x \vec{u}) $$
 
-\section{Describing objects in a space.}
-So far we've been mostly concerned with planes and 
+The vector that the cross product produces is perpendicular to both evaluated vectors.
 
-\subsection{lines}
+
+we can also use the norm of this cross product as a way to calculate the area of the paralleleipied form 
+triangulated by $\vec{u}$ and $\vec{v}$ as $$ A = ||\vec{u}x \vec{v}|| $$ 
+This can also work for three-dimensional paralleleipied in the following formula:
+
+\begin{equation}
+    |\vec{w} \centerdot (\vec{u}x\vec{v})| = ||\vec{w}|| * ||\vec{u}x\vec{v}|| * |\cos \vartheta| 
+\end{equation}
+
+we can also say, from this:
+
+
+\begin{equation}
+    \vec{w} \centerdot (\vec{u}x\vec{v}) = \vec{u} \centerdot (\vec{v}x\vec{w}) = \vec{v} \centerdot (\vec{w}x\vec{u})
+\end{equation}
+
+
+\section{Describing objects in a space.}
+
+\subsection{Lines}
 
 A line is a geometrical object of the form:
 
@@ -365,8 +445,68 @@ A line is a geometrical object of the form:
     r(t) = t \vec{v} + P, t \exists \mathbb{R}
 \end{equation}
 
-\paragraph*{Find the equation of the line that joins points $P=(1,2,1)$ and
-$ P=(-1,3,4) $}
+generating it requires a point and a vector. Point defined by P, and vector defined by an offset 't' and a vector '$\vec{v}$'
+
+\textbf{Example}
+\textit{Find the equation of a line 'l' that crosses $A=(2,1,1)$ and $B=(3,5,7)$}
+
+for this, we'll establish the following formula:
+\begin{gather}
+    l(t) =
+    \begin{pmatrix}
+        A_1\\
+        A_2\\
+        A_3\\
+    \end{pmatrix}
+    +
+    t 
+    \begin{pmatrix}
+        B_1-A_1\\
+        B_2-A_2\\
+        B_3-A_3\\
+    \end{pmatrix}
+\end{gather}
+
+Instanced, for this specific case, as:
+\begin{gather}
+    l(t) =
+    \begin{pmatrix}
+        2\\
+        1\\
+        1\\
+    \end{pmatrix}
+    +
+    t 
+    \begin{pmatrix}
+        3-2\\
+        5-1\\
+        7-1\\
+    \end{pmatrix}
+    \\
+    l(t) =
+    \begin{pmatrix}
+        2\\
+        1\\
+        1\\
+    \end{pmatrix}
+    +
+    t 
+    \begin{pmatrix}
+        1\\
+        4\\
+        6\\
+    \end{pmatrix}
+\end{gather}
+
+Answer is equation 2.15, this can be later expanded into a parametric or simetric form of this line. But before we do that, let's try expanding the reason this works:
+
+\textbf{Example 2}
+\textit{Find the equation of the line that joins points $P=(1,2,1)$ and
+$ Q=(-1,3,4) $}
+
+we can find the line that joins two points by subtracting the vectors that join them, let's take a look at the 
+cartesian plane where we indicate 'P' and 'Q':
+
 
 \chapter{Functions}
 

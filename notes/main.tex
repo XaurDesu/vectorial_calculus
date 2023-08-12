@@ -434,6 +434,17 @@ we can also say, from this:
     \vec{w} \centerdot (\vec{u}x\vec{v}) = \vec{u} \centerdot (\vec{v}x\vec{w}) = \vec{v} \centerdot (\vec{w}x\vec{u})
 \end{equation}
 
+\subsection{Determinants}
+
+a determinant is defined as:
+
+\begin{equation}
+    det
+    \begin{pmatrix}
+        a & b \\
+        c & d \\
+    \end{pmatrix}
+\end{equation}
 
 \section{Describing objects in a space.}
 
@@ -507,8 +518,45 @@ $ Q=(-1,3,4) $}
 we can find the line that joins two points by subtracting the vectors that join them, let's take a look at the 
 cartesian plane where we indicate 'P' and 'Q':
 
+\subsection{Vector Projection}
+
+A vector can be projected through the equation:
+
+\begin{equation}
+    \frac{\vec{u} \centerdot \vec{v}}{||\vec{v}||^2} \vec{v}
+\end{equation}
+
+\subsection{Euclidian Planes}
+
+A plane is the union of all points defined by a formula of the type:
+\begin{equation}
+    i_1 A + i_2 B + i_3 C = D
+\end{equation}
+
+\section{Cylindrical and spherical coordinates.}
+
+When trying to define parts of a line in algebra, we'll usually be looking at
+coordinates, be them polar or cartesian. In either case, their information can be 
+converted to the other system through the following formulas.
+
+\begin{gather}
+    \begin{cases}
+        \rho = \sqrt{x^2+y^2} \\
+        \theta = \arctan(\frac{y}{x})
+    \end{cases}
+    \text{\textit{cartesian to polar}}\\
+    \begin{cases}
+        \alpha_x = \rho \cos \theta \\
+        \alpha_y = \rho \sin \theta
+    \end{cases}
+    \text{\textit{polar to cartesian}}
+\end{gather}
+
+
 
 \chapter{Functions}
+
+
 
 % Simply upload additional images Heading5.jpg, Heading6.jpg etc. into the pictures folder
 

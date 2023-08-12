@@ -552,7 +552,93 @@ converted to the other system through the following formulas.
     \text{\textit{polar to cartesian}}
 \end{gather}
 
+Cartesian coordinates generally translate well to other dimensional spaces, such as would be the case
+for $ \mathbb{R}^3 $, however, polar coordinates as we know them usually aren't as translatable in a direct
+manner, and expressing them in three-dimensional spaces might be better suited to 
+be expressed on a cylindrical or spherical condition. 
+\subsubsection*{Cylindrical coordinates}
+In the case of cylindrical coordinates, the translation is probably the most intuitive, by computing
+a cylinder with polar coordinates that indicate an (x,y) position, and a 'Z' variable indicating height 
+that allows us to project the vector on a third dimension, this 'z' variable is exactly the same as it would be
+on a cartesian model. We can express it like such:
 
+$ \vec{v} = ( \rho, \theta, Z) $
+
+conversion to a cartesian model can be expressed as:
+
+\begin{gather}
+    \vec(\alpha) =
+    \begin{cases}
+        \alpha_x = \rho \cos \theta \\
+        \alpha_y = \rho \sin \theta \\
+        \alpha_z = Z
+    \end{cases}
+    \text{\textit{Cylindrical to cartesian}}
+\end{gather}
+
+\subsubsection*{Spherical coordinates}
+
+A spherical coordinate is formed by a tuple:
+
+\begin{gather}
+    (\rho, \theta ,\phi);
+    \begin{cases}
+        \rho \geq  0 \\
+        0 \le \theta \le 2\pi \\
+        0 \le \phi \le \pi    
+    \end{cases}
+\end{gather}
+
+Where $ \rho $ is the magnitude of the vector, $\theta$ is the (x,y) coordinates, and
+$\phi$ is the (y,z) angle.
+
+this tuple can generate two vectors:
+\begin{equation}
+    \begin{cases}
+        \rho \sin \phi\\
+        \rho
+    \end{cases}
+\end{equation}
+
+And can be converted to a cartesian model as such:
+
+\begin{gather}
+    \vec(\alpha) =
+    \begin{cases}
+        \alpha_x = \rho \sin \phi \cos \theta \\
+        \alpha_y = \rho \sin \phi \sin \theta \\
+        \alpha_z = \rho \cos \phi
+    \end{cases}
+    \text{\textit{Spherical to cartesian}}
+\end{gather}
+
+Such a model works, as we might imagine, like a sphere. where we express the possible vectors
+through a sphere of $ \rho $ radius.
+
+\section{n-dimensional Euclidian Spaces}
+
+\begin{equation}
+    \mathbb{R}^n, \vec{x} \begin{pmatrix}
+        x_1
+        \dots
+        x_n
+    \end{pmatrix}
+    ; \mathbb{C}
+    \text{\textit{ Operations:}}
+    \begin{cases}
+        \vec{x}+\vec{y} \\
+        \alpha \vec{x} \\
+        \vec{x} \centerdot \vec{y} \\
+    \end{cases}
+\end{equation}
+
+
+\subsection*{Cauchy-Schwartz Inequality}
+
+\begin{gather}
+    \text{Let: } \vec{x},\vec{y} \exists \mathbb{R}^n \text{ then: }\\
+    |\vec{x}\centerdot\vec{y}| \le ||\vec{x}|| \centerdot ||\vec{y}||
+\end{gather}
 
 \chapter{Functions}
 

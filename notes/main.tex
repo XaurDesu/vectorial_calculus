@@ -528,10 +528,26 @@ A vector can be projected through the equation:
 
 \subsection{Euclidian Planes}
 
-A plane is the union of all points defined by a formula of the type:
+A plane is the union of all points in a 2-dimensional subset of $ \mathbb{R^3} $ defined by a formula of the type:
 \begin{equation}
-    i_1 A + i_2 B + i_3 C = D
+    i_1 A + i_2 B + i_3 C = D = (D \centerdot || \vec{n} ||)
 \end{equation}
+
+Where $ \vec{n} $ is also written as:
+\begin{equation}
+    \vec{n} = \begin{pmatrix}
+        a \\
+        b \\
+        c
+    \end{pmatrix}
+\end{equation}
+
+It can be determined by 
+\begin{itemize}
+    \item three points in $ \mathbb{R^3} $
+    \item Two vectors and a point in $ \mathbb{R^3} $
+    \item a point and the normal vector in $ \mathbb{R^3} $
+\end{itemize}
 
 \section{Cylindrical and spherical coordinates.}
 
@@ -590,7 +606,15 @@ A spherical coordinate is formed by a tuple:
 \end{gather}
 
 Where $ \rho $ is the magnitude of the vector, $\theta$ is the (x,y) coordinates, and
-$\phi$ is the (y,z) angle.
+$\phi$ is the (y,z) angle. They must adhere to the following for it to be geometrically coherent:
+
+\begin{equation}
+    \begin{cases}
+        \rho > 0 \\
+        0 \le \phi \le \pi \\
+        0 \le \theta \le 2\pi
+    \end{cases}
+\end{equation}
 
 this tuple can generate two vectors:
 \begin{equation}
@@ -612,10 +636,44 @@ And can be converted to a cartesian model as such:
     \text{\textit{Spherical to cartesian}}
 \end{gather}
 
+\paragraph{Example}
+Imagine the following spherical vector:
+$$
+\begin{cases}
+    \rho = 2 \\
+    \theta = \frac{\pi}{2}\\
+    \phi = \frac{\pi}{4}
+\end{cases}
+$$
+
+\textit{How do we convert it to a cartesian vector?}
+
+We'll get the vector by simply replacing the previous formulas with the 
+values provided as it follows:
+
+\begin{equation}
+    x = 2 \sin(\frac{\pi}{4}) \cos(\frac{\pi}{2}) \\
+    y = 2 \sin(\frac{\pi}{4}) \sin(\frac{\pi}{2}) \\
+    z = 2 \cos(\frac{\pi}{4})
+\end{equation}
+
+We can also invert this equation and get a cartesian vector to its spherical form
+through the following formula:
+\begin{gather}
+    \begin{cases}
+        \rho = \sqrt{x^2 + y^2 + z^2} \\
+        \theta = \arctan{\frac{y}{x}} \\
+        \phi = \arccos{\frac{z}{\sqrt{x^2 + y^2 + z^2}}}
+    \end{cases}
+    \text{\textit{Cartesian to Spherical}}
+\end{gather}
+
 Such a model works, as we might imagine, like a sphere. where we express the possible vectors
 through a sphere of $ \rho $ radius.
 
 \section{n-dimensional Euclidian Spaces}
+
+in an n-dimensional euclidian space, we can determine:
 
 \begin{equation}
     \mathbb{R}^n, \vec{x} \begin{pmatrix}
@@ -633,15 +691,157 @@ through a sphere of $ \rho $ radius.
 \end{equation}
 
 
-\subsection*{Cauchy-Schwartz Inequality}
+\subsection{Cauchy-Schwartz Inequality}
+
+This inequality determines that the internal product is lesser or equal to the
+multiplication of the norms of two vectors, written as:
 
 \begin{gather}
     \text{Let: } \vec{x},\vec{y} \exists \mathbb{R}^n \text{ then: }\\
     |\vec{x}\centerdot\vec{y}| \le ||\vec{x}|| \centerdot ||\vec{y}||
 \end{gather}
 
-\chapter{Functions}
+and it is equal if and only if:
 
+\begin{equation}
+    \vec{x} = \lambda \vec{y} \text{ or either } \begin{cases}
+        \vec{x} = 0 \\
+        \vec{y} = 0
+    \end{cases}
+\end{equation}
+
+\section{Matrices}
+
+A matrix is a numerical representation of values in $ \mathbb{R}^n $. They can represent 
+planes, vectors, or even hyperplanes in $ \mathbb{R}^n | n > 3 $. An example in $\mathbb{R}^2$
+would be:
+
+\begin{equation}
+    \begin{pmatrix}
+        a & b \\
+        c & d
+    \end{pmatrix}
+\end{equation}
+
+Notable matrices include:
+\begin{itemize}
+    \item Identity: $ \begin{pmatrix}
+        1 & \dots & 0 & \dots & 0 \\
+        0 & \dots & 1 & \dots & 0 \\
+        0 & \dots & 0 & \dots & 1
+    \end{pmatrix} $ = Id
+\end{itemize}
+
+\subsection{Inverible Matrices}
+
+We can invert a matrix if a $ B_{nxn} $ matrix exists such as:
+\begin{equation}
+    AB = BA = Id
+\end{equation}
+
+we can also use the determinant to check this, as:
+
+\begin{equation}
+    det(A) \begin{cases}
+        = 0 \text{: is Invertible} \\
+        \neq 0 \text{: is not Invertible} \\
+    \end{cases}
+\end{equation}
+
+\subsection{Matrix multiplication}
+
+We can multiplicate a matrix by another one if we define the multiplication as:
+
+\begin{equation}
+    AxB = C_{ij} = \sum_{k = 1}^{n} a_{ik} b_{jk}  
+\end{equation}
+
+\paragraph{Example}
+
+We want to multiply two matrices as:
+
+\begin{equation}
+    \begin{pmatrix}
+        a & b\\
+        c & d
+    \end{pmatrix}
+    x
+    \begin{pmatrix}
+        1 & 2 \\
+        0 & 1
+    \end{pmatrix}
+\end{equation}
+
+Therefore if we try doing AxB and BxA:
+
+\begin{gather}
+    AxB =
+    \begin{pmatrix}
+        a & 2a + b \\
+        c & 2c + d
+    \end{pmatrix}\\
+    BxA =
+    \begin{pmatrix}
+        a+2c & b + 2d \\
+        c & d
+    \end{pmatrix}\\
+\end{gather}
+
+As we can see, matrix multiplication is not commutative, but rather it is defined
+by the order on which A and B are written
+
+
+$$ Ae_j = A_j $$
+
+\chapter{Functions}
+\section{Geometry of functions with values in $ \mathbb{R} $}
+
+We can affirm that a function is two or three dimensional if, respectively:
+
+\begin{gather}
+    y = f(x) \implies \begin{cases}
+        (x,y): y = f(x), x \exists D(f)
+    \end{cases} \\
+    z = f(x,y) \implies \begin{cases} 
+    (x,y,z): z = f(x,y), (x,y) \exists D(f)
+    \end{cases}
+\end{gather}
+
+\pagebreak
+\paragraph*{Example:}
+\textit{3,1,1: Graphicate the following:}
+$$ z = \frac{6-x-2y}{3} $$
+\includegraphics[scale = 0.5]{Pictures/plane3,1.png}
+
+As we can see, the graph makes sense because:
+
+\pagebreak
+\textit{3,1,2: Graphicate the following:}
+
+$$ z = 1-x = f(x,y) $$
+\includegraphics*[scale=0.5]{plane3,1,2.png}
+\pagebreak
+
+\textit{3,1,3: Graphicate the following:}
+
+$$ z = x^2 + y^2 $$
+
+\includegraphics[scale = 0.5]{Pictures/plane3,1,3.png}
+this is a three-dimensional parabola, comparable to it's two dimensional form, yet 
+working on another 
+
+it can guarantee:
+
+$$ \begin{cases}
+    x = 0: z = y^2 \\
+    y = 0: z = x^2
+\end{cases}$$
+
+and this equation can be deduced through this behavior. As:
+
+$$ z = z_0 : x^2 + y^2 = z $$
+
+there are level curves, which project the curve generated by such mathematical artifacts as:
 
 
 % Simply upload additional images Heading5.jpg, Heading6.jpg etc. into the pictures folder

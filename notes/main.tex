@@ -855,10 +855,147 @@ when measuring space. In any case, a level curve could be illustrated as such:
 \section{Equations}
 
 An equation, although similar to a function such as the ones studied so far,
-can be distinguished by some particularities they present:q 
+can be distinguished by some particularities they present: 
 
 $$ x^2 + y^2 + z^2 = 1$$
 
+A few examples of objects described by equations are:
+\subsection{Elipsoids}
+
+An elipsoid is defined by the following equation:
+\begin{equation}
+    (\frac{x}{a})^2+(\frac{y}{b})^2+(\frac{z}{c})^2 = 1
+\end{equation}
+
+
+\subsection{Hyperboloid}
+
+a Hyperboloid can be seen as:
+\begin{equation}
+    (\frac{x}{a})^2+(\frac{y}{b})^2 = (\frac{z}{c})^2 + 1
+\end{equation}
+
+\subsection{Cilinders}
+
+The general formula of a cylinder is:
+
+\begin{equation}
+    (\frac{x}{a})^2+(\frac{y}{b})^2 = 1
+\end{equation}
+
+The level curves of this shape will never change when projected on a plane.
+
+\subsection{Parabolic}
+
+The general formula of a parabolic is:
+
+\begin{equation}
+    y = ax^2
+\end{equation}
+
+\subsection{Paraboloid}
+
+The general formula of a paraboloid is:
+
+\begin{equation}
+    z = (\frac{x}{a})^2 + (\frac{y}{b})^2
+\end{equation}
+
+This shape has a variation, called a hyperbolic paraboloid:
+
+
+\begin{equation}
+    z = (\frac{x}{a})^2 - (\frac{y}{b})^2
+\end{equation}
+
+It will look like this when graphicated:
+\begin{center}
+    \includegraphics*[]{Pictures/hyperbolic_paraboloid.png}    
+\end{center}
+
+\chapter{Limits and continuity}
+\subsection*{Sets and disks}
+An open disk of radio 'r' and contourn $\vec{x}$ can be defined as
+
+
+\begin{equation}
+    \text{Let: }\vec{x}\exists\mathbb{R}^n , r > 0 \\ D_r = \{ \vec{x} \exists \mathbb{R}^n: ||\vec{x} - \vec{x_0} || < r \}
+\end{equation}
+
+and a disk that includes the internal values could be defined as 
+
+\begin{equation}
+    \text{Let: }\vec{x}\exists\mathbb{R}^n , r > 0 \\ D_r = \{ \vec{x} \exists \mathbb{R}^n: ||\vec{x} - \vec{x_0} || \le r \}
+\end{equation}
+
+Both of these are an important definition of what we'll call a \textbf{set}. 
+
+let $$ \mu \subseteq \mathbb{R}^n $$ we can say that $\mu$ is an open set if  for any point $x_0 \exists \mu$
+there exists a r>0 such as $$D_r(x_0) \subseteq \mu$$
+
+Such sets have a mathematical structure called frontier points that can be defined as:
+\paragraph*{Frontier point}
+Let $ A \subseteq \mathbb{R}^n $; a point '$x \exists \mathbb{R}^n$' is a frontier point if any $ \vec{x} $
+vecinity contains a point of A and at least a point outside of A
+
+\paragraph*{Example}
+
+Prove that '$A = (x,y)\exists\mathbb{R}^2: y > 0$' is an open set
+
+Given that the open set can be inferred by a disk, we can affirm:
+
+\begin{gather}
+    \implies y>0 \implies r = \frac{y}{2} > 0 \\
+    \text{If : }(a,b)\exists D_r(x,y)\\
+    | b-y | \le \sqrt{(a-x)^2 + (b-y)^2} < r = \frac{y}{2} \\
+    |b-y| < \frac{y}{2}\\
+\end{gather}
+
+\section{Limits}
+A limit can be defined as
+
+$ \lim_{x \to a} f(x) = L $
+
+Where:
+
+$ \forall \epsilon > 0 \exists \varrho > 0: | f(x) - L | < \epsilon $
+for all X, such as 
+
+$ 0 < |x-a| < \vartheta $
+
+Or when said in words; "for every epsilon greater than zero that exists in a theta greater than zero, the function of value x minus L is lesser than epsilon for all X, such as the norm is greater than zero and smaller than theta".
+
+For a limit to exist, we need three conditions to be met:
+
+\begin{itemize}
+    \item there is a left limit
+    \item there is a right limit
+    \item they're equal
+\end{itemize}
+
+
+\subsubsection*{Multivariable limits}
+
+a limit in a multi variable plane can be defined as: 
+
+\begin{gather}
+    \lim_{(x,y) \to (a,b)} = L
+\end{gather}
+
+Meaning that we can force $ |f(x,y)-L|$ to be as near to zero as posible, making
+(x,y) and (a,b) as close as possible without them actually ever touching each other.
+
+Or, more formally;
+
+\begin{gather}
+    \text{Let: } f: A \subseteq \mathbb{R}^n \rightarrow \mathbb{R}^n \text{and :}\\
+    \text{let $ \vec{x_0} \exists A $ or $ \vec{x_0} \exists \varTheta A $ }\\
+    \lim_{x \to x_0} f(\vec{x}) = L \exists \vartheta \exists A \implies 0 < ||\vec{x} - \vec{x_0}|| < \vartheta, \implies ||f(\vec{x})-L||<\epsilon
+\end{gather}
+
+\subsection{Continual Functions}
+
+A function can be defined as continual if:
 
 % Simply upload additional images Heading5.jpg, Heading6.jpg etc. into the pictures folder
 

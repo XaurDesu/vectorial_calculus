@@ -988,7 +988,7 @@ For a limit to exist, we need three conditions to be met:
 a limit in a multi variable plane can be defined as: 
 
 \begin{gather}
-    \lim_{(x,y) \to (a,b)} = L
+    \lim_{(x,y) \to (a,b)} = \vec{L}
 \end{gather}
 
 Meaning that we can force $ |f(x,y)-L|$ to be as near to zero as posible, making
@@ -997,6 +997,7 @@ Meaning that we can force $ |f(x,y)-L|$ to be as near to zero as posible, making
 Or, more formally;
 
 \begin{gather}
+    f: \mathbb{R}^n \to \mathbb{R}^m \\
     \text{Let: } f: A \subseteq \mathbb{R}^n \rightarrow \mathbb{R}^n \text{and :}\\
     \text{let $ \vec{x_0} \exists A $ or $ \vec{x_0} \exists \varTheta A $ }\\
     \lim_{x \to x_0} f(\vec{x}) = L \exists \vartheta \exists A \implies 0 < ||\vec{x} - \vec{x_0}|| < \vartheta, \implies ||f(\vec{x})-L||<\epsilon
@@ -1094,13 +1095,67 @@ and if they're continuous in an open set 'D'.
         x^2 + y^2 \implies (x,y) \neq (0,0)
     \end{cases} \\
     \frac{df}{dx} (0,0)= \lim_{h \to 0}  \frac{f(h, 0) - f(0,0)}{h} = \lim_{h \to 0}  \frac{0 - 0}{h} = 0 \\
-    \text{BUT THEN, that means a partial derivative for (0,0) does not exist, therefore this is not a continuous function.} \\
+    \text{BUT THEN, that means a partial derivative for (0,0) does not exist,}\\ \text{ therefore this is not a continuous function.} \\
     \lim_{(x,y) \to (0,0)}  \frac{xy}{x^2+y^2} NE
 \end{gather}
 
 \section{Continual Functions}
 
-A function can be defined as continual if:
+A function can be defined as continual if a limit can be described as:
+
+\begin{itemize}
+    \item $$\lim_{\vec{x} \to \vec{x}_0}f(x) = f(X_0) = f(\lim_{\vec{x} \to \vec{x_0}} \vec{x})$$
+\end{itemize}
+
+This would mean that a limit is replaceable by a function where the limit of $\vec{x}$ 
+is described according to the mathematical rules that define a function. 
+if a function is continual and has $\frac{D_{fi}}{D_{xj}}$ then it's differentiable
+
+
+\section{Tangent Planes}
+ We tangentially touched this topic on implicit differentiation, however, to define more 
+ formally a tangent plane,
+ 
+ Let:
+
+ \begin{gather}
+    f: A \subseteq \mathbb{R}^2 \to R \\
+    \vec{\Delta} f (x,y) = < \underbrace{\frac{D_f}{D_x} (x,y)}_\text{Partial Derivative of X}, \underbrace{\frac{D_f}{D_y} (x,y)}_\text{Partial Derivative of y}> \\
+    f(x_0, y_0) + D(f(\vec{x})) (\vec{x}-\vec{x_0})
+ \end{gather}
+
+
+\section{Derivative Properties}
+\subsection{Constant multiple rule}
+$$ \frac{\delta}{\delta_x}(c f(x,y)) = c \frac{\delta}{\delta_x}(f(x,y)) $$
+\subsection{Sum rule}
+$$\frac{\delta}{\delta_x}(f(x,y) + g(x,y)) = \frac{\delta_f}{\delta_x} f(x,y) + \frac{\delta_g}{\delta_x} g(x,y)$$
+\subsection{Product rule}
+$$\frac{\delta}{\delta_x}(f(x,y) \centerdot g(x,y)) = \frac{\delta_f}{\delta_x} f(x,y) g(x,y) + \frac{\delta_g}{\delta_x} g(x,y) f(x,y)$$
+\subsection{Divisor rule}
+$$\frac{\delta}{\delta_x}(\frac{f}{g})(x,y) = \frac{\frac{\delta_f}{\delta_x} f(x,y) g(x,y) - \frac{\delta_g}{\delta_x} g(x,y) f(x,y)}{[g(x,y)]^2}$$
+\subsection{Chain Rule}
+
+\subsubsection{One variable}
+If $\vec{u}(x)$ and $\vec{x}(t)$ are differentiable, then: 
+
+$$\frac{\delta_u}{\delta_t} = \frac{d_y}{d_x} \frac{d_x}{d_t} = u'(x|t|) + x'(t)$$
+
+\subsubsection{Two variables}
+
+Given  $\vec{w}(x,y)$, $\vec{u}(x,y)$ and $\vec{v}(x,y)$, then $w(u(x,y), v(x,y))$ is differentable.
+
+so, therefore:
+
+\begin{gather}
+    y = 
+    \begin{cases}
+        \frac{\delta w}{\delta x} = \frac{\delta w}{\delta u} \frac{\delta u}{\delta x} + \frac{\delta w}{\delta v} \frac{\delta v}{\delta x} \\
+        \frac{\delta w}{\delta y} = \frac{\delta w}{\delta u} \frac{\delta u}{\delta y} + \frac{\delta w}{\delta v} \frac{\delta v}{\delta y} 
+    \end{cases}
+\end{gather}
+
+
 
 % Simply upload additional images Heading5.jpg, Heading6.jpg etc. into the pictures folder
 

@@ -893,6 +893,15 @@ The general formula of a parabolic is:
     y = ax^2
 \end{equation}
 
+\subsection{sphere}
+
+\begin{equation}
+    \begin{cases}
+        x^2+y^2+z^2 = r^2 \\
+        z \geq 0
+    \end{cases}
+\end{equation}
+
 \subsection{Paraboloid}
 
 The general formula of a paraboloid is:
@@ -993,7 +1002,103 @@ Or, more formally;
     \lim_{x \to x_0} f(\vec{x}) = L \exists \vartheta \exists A \implies 0 < ||\vec{x} - \vec{x_0}|| < \vartheta, \implies ||f(\vec{x})-L||<\epsilon
 \end{gather}
 
-\subsection{Continual Functions}
+\subsection{Differentiation}
+
+a function in a single variable can have every single point on a curve being approximated to
+a line, called a tangent. This z = (x,y) line variable can be defined by partial derivatives, that
+can be described as:
+\begin{equation}
+    z_x = \frac{D_z}{D_x} = \frac{D_f}{D_x} (x,y) = \lim_{h \to 0} = \frac{(x+h,y)-f(x,y)}{h} 
+\end{equation}
+\begin{equation}
+    \frac{d_f}{d_y}(x,y) = \lim_{h \to 0} = \frac{(x,y+h)-f(x,y)}{h}
+\end{equation}
+Where 'h' is a real number that tends towards zero.
+
+\paragraph*{Example: }
+\textit{let: }
+\begin{gather}
+    f(x,y) = x^2-y^3 - 3x^4y
+\end{gather}
+\textit{then, differentiate the equation.}
+
+\textbf{solution:}
+
+\begin{gather}
+    \frac{d_f}{d_x} = 2xy^3 - 12x^3y \\
+    \frac{d_f}{d_y} = 3x^2y^2 - 3x^4
+\end{gather}
+
+When differentiating an equation on a specific variable, we take the other variables as constants.
+In this example, we leave 'x' untouched when differentiating on 'y' and viceversa.
+
+\subsection{Implicit differentiation}
+
+We can think of an implicit derivative as the process of using partial derivatives to 
+differentiate a single, more complex equation. 
+
+\paragraph{Examples: }
+
+\begin{itemize}
+    \item a line that goes through $ \frac{y - y_0}{x - x_0} $
+
+\end{itemize}
+
+For three dimensions we might imagine instead of a line being the tangent, a 
+plane providing the same definition and mathematical role as it, defined as:
+
+\begin{gather}
+    z = f(x, y_0) : z - z_0 = \frac{d_f}{d_x}(x, y_0)(x-x_0) \\
+    z = f(x_0, y) : z - z_0 = \frac{d_f}{d_x}(x_0, y)(y-y_0)
+\end{gather}
+
+and with both this derivatives, we can define a plane as 
+
+\begin{equation}
+    z - z_0 = a(x-x_0) + b (y-y_0) \text{\textit{Where: }} \begin{cases}
+        a = \frac{d_f}{d_y}f(x_0, y_0)\\
+        b = \frac{d_f}{d_x}f(x_0,y_0)
+    \end{cases}
+\end{equation}
+
+IF: $ x = x_0 = 0 $ and $ y = y_0$
+
+We can approximate a three-dimensional differentiation as 
+
+\begin{gather}
+    d_z = fx(x_0, y_0)(x - x_0) + f_yfx(x_0, y_0)(y - y_0)\\
+    f(x,y) \approx f(x_0, y_0) + d_z
+\end{gather}
+
+\textit{note: tangent planes are a very popular test/quiz problem, you should
+learn how to find them for such ventures, if your professor ever mentions them
+in class and ESPECIALLY if they try to solve one in front of the class.}
+
+We can say that a function $ f: \mathbb{R}^2 \to \mathbb{R} $ is differentiable if:
+
+\begin{equation}
+    \Delta f = d_f + \epsilon_1 \Delta x +\epsilon_2 \Delta y 
+\end{equation}
+
+\noindent This deffinition is a bit hard to applicate, so we'll use the differentiation criteria for 
+looking for appliability.
+
+\textit{Appliability Criteria: }
+We will say it is possible to differentiate a function if every partial derivative in $\frac{d_f}{d_{xj}}$
+and if they're continuous in an open set 'D'.
+
+\paragraph*{Example:}
+\begin{gather}
+    f(x,y) = \begin{cases}
+        0 \implies (x, y) = (0,0) \\
+        x^2 + y^2 \implies (x,y) \neq (0,0)
+    \end{cases} \\
+    \frac{df}{dx} (0,0)= \lim_{h \to 0}  \frac{f(h, 0) - f(0,0)}{h} = \lim_{h \to 0}  \frac{0 - 0}{h} = 0 \\
+    \text{BUT THEN, that means a partial derivative for (0,0) does not exist, therefore this is not a continuous function.} \\
+    \lim_{(x,y) \to (0,0)}  \frac{xy}{x^2+y^2} NE
+\end{gather}
+
+\section{Continual Functions}
 
 A function can be defined as continual if:
 

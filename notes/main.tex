@@ -1156,6 +1156,47 @@ so, therefore:
 \end{gather}
 
 
+In general, we can define this rule as 
+\begin{equation}
+    D(f o g) = Df(g(\vec{x_0})) Dg(\vec{x_0})
+\end{equation}
+
+\section{Gradients and directional derivatives.}
+
+assume a 3D plane as such:
+
+\begin{center}
+    \includegraphics*[scale = 0.5]{plane.png}
+\end{center}
+
+Def: a directional derivative is given by:
+
+\begin{equation}
+    D_{\vec{u}}f(x_0,y_0) = \frac{d}{dt} f(x_0 + t u_1, y_0 + t u_2) ; t = 0
+\end{equation}
+
+And we say that if a derivative exists, then $||\vec{u}|| = 1$;
+f depends on x and y, and x and y both depend on t, this can be seen mathematically as:
+
+\begin{equation}
+    \frac{df}{dx} f(x_0 + t u_1, y_0 + t u_2) \underbrace{U_1}_{\frac{dx}{dt}} + \frac{df}{dy}(x_0 + t u_1, y_0 + t u_2) \underbrace{U_2}_{\frac{dy}{dt}}
+\end{equation}
+
+from this we can observe
+\begin{equation}
+    D_{\vec{u}}\ f(x_0, y_0) = \vec{\Delta} f(x_0, y_0) \centerdot \vec{u} = ||\vec{\Delta} f(x_0,y_0)|| \centerdot ||\vec{u}|| \centerdot \cos \theta\\
+\end{equation}
+
+So, given this set of conditions:
+
+\begin{gather}
+    \begin{cases}
+        D_{\vec{u}} f(x_0, y_0) \text{  is maximal if $ \theta $ is 0} \\
+        D_{\vec{u}} f(x_0, y_0) \text{  is minimal if $ \theta $ is $\pi$}
+    \end{cases}
+\end{gather}
+
+
 
 % Simply upload additional images Heading5.jpg, Heading6.jpg etc. into the pictures folder
 

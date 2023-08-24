@@ -1196,7 +1196,134 @@ So, given this set of conditions:
     \end{cases}
 \end{gather}
 
+We can infer then, regarding our direction:
 
+\begin{equation}
+    \vec{u} = \frac{\vec{\Delta} f(x_0, y_0)}{||\vec{\Delta}f(x_0,y_0)||}
+\end{equation}
+
+will make the function grow faster, and:
+
+\begin{equation}
+    \vec{u} = - \frac{\vec{\Delta} f(x_0, y_0)}{||\vec{\Delta}f(x_0,y_0)||}
+\end{equation}
+
+will make it decrease faster.
+ 
+
+\subsection{implicit equations}
+
+An implicit surface equation given by $F(x,y,z) = C$ we can define, as a curve:
+
+\begin{gather}
+    \vec{r}t = <x(t),y(t),z(t)> \\
+    \vec{r}t' = <x'(t),y'(t),z'(t)> 
+\end{gather}
+
+And from there we can assume that this curve is a part of S if:
+
+\begin{gather}
+    F(x(t), y(y), z(t)) = C ; \forall t
+\end{gather}
+
+Given this, F depends on x,y, and z and those three variables depend on t, allowing us
+to affirm:
+
+\begin{gather}
+    F_x \frac{dx}{dt} + F_y \frac{dy}{dt} + F_z \frac{dz}{dt} \\
+    \vec{\Delta} f \centerdot \vec{r}t' = 0
+\end{gather}
+
+geometrically this means the gradient is perpendicular to the tangent and therefore, the tangent plane.
+to S in $(x_0,y_0,z_0)$, which can be expressed vectorially (and therefore, more usefully) as:
+
+\begin{equation}
+    \vec{\Delta}F(x_0,y_0,z_0) \centerdot \begin{pmatrix}
+        x - x_0 \\ 
+        y - y_0 \\ 
+        z - z_0
+    \end{pmatrix} = 0
+\end{equation}
+
+The line normal to S in $(x_0,y_0,z_0)$ can be defined as:
+
+\begin{equation}
+    \vec{n}(t) = \vec{x_0} + t\vec{\Delta} F(x_0,y_0,z_0)
+\end{equation}
+
+\subsection{Examples}
+\paragraph*{Find the gradient in P=(0,3) if $f(x,y)=2ye^{xy}+ y \cos x$} 
+We can use what we know of partial derivatives to affirm:
+\begin{gather}
+    \vec{\Delta}f(x,y) = <2y^2 e^{xy} - y \sin x ; 2e^{xy}+2xe^{xy} + \cos x>;\\
+    \text{<replace for P>};\\
+    \vec{\Delta}f(0,3) = <2*3^2 e^{0*3} - 3 \sin 0 \ ; \ 2e^{0*3} + 2* 0 *e^{0*3} + \cos (0)>;\\
+    \vec{\Delta}f(0,3) = <18,3>
+\end{gather}
+
+\paragraph*{Find the derivative in $f(x,y) = \frac{x}{y}$ in the point
+(6,-2) and the direction of $\vec{v} = <1,3>$} 
+
+This can be said as:
+\begin{gather}
+    \vec{\Delta}(x,y) = <\frac{1}{y},-\frac{x}{y^2}>;\\
+    \vec{\Delta}(6,-2) = <- \frac{1}{2},-\frac{3}{2}>
+\end{gather}
+
+Given this initial state, we can then use the following declarations on this problem:
+
+\begin{gather}
+    ||\vec{v}|| = \sqrt{10};\\
+    \vec{u} = \frac{\vec{v}}{||\vec{v}||} = \frac{1}{||\vec{v}||} \vec{v}
+\end{gather}
+
+And therefore, conclude:
+
+\begin{equation}
+    D_{\vec{u}}f(6,-2) = \frac{1}{\sqrt{10}} (\frac{1}{2} - \frac{9}{2}) = \frac{4}{\sqrt{10}} = -\sqrt{\frac{8}{5}}
+\end{equation}
+
+\paragraph*{Find the change rate in $h(x,y,z) = \cos(xy)+e^{yz}+\ln(xz)$ in the point
+(1, 0, 0.5) moving towards $P_1 = (2,2,\frac{5}{2})$} 
+
+Much as in our first example, we can use partial derivatives to get a delta for this problem.
+The change rate of a function \textbf{Is the same as a derivative, for a derivative is interested in
+how much a function changes}; we shall then affirm:
+
+\begin{equation}
+    \vec{\Delta}h(x,y,z) = <-\delta \sin(x,y) + \frac{1}{x}, - x \sin y +ze^{yz}, ye^{yz} + \frac{1}{z} >
+\end{equation}
+
+\paragraph*{Find the tangent plane and normal line of:}
+$x^2 + y^2 = -4+2xy + x - 3y + z^2$ in $P=(1,2,\sqrt{10})$
+
+We can reweite this as: 
+
+\begin{gather}
+    F(x,y,z) = -4 \\
+    \vec{\Delta} F (x,y,z) = <2x-2y-1; 2y - 2x + 3, -2z > \\
+    \vec{\Delta} F(1,2,\sqrt{10}) = <-3,5,-2 \sqrt{10}>
+\end{gather}
+
+From here, we can define the plane as:
+\begin{gather}
+    -3(x-1) + 5(y-2) - 2 \sqrt{10}(z-\sqrt{10}) = 0 \\
+    -3x + 5y - 2\sqrt{10} z = -13 \\
+    3x - 5y + 2\sqrt{10} z = 13
+\end{gather}
+
+And the line can be defined therefore as:
+\begin{equation}
+    \vec{n}(t) = \begin{pmatrix}
+        1 \\
+        2\\
+        \sqrt{10}
+    \end{pmatrix} + t \begin{pmatrix}
+        -3 \\
+        5 \\
+        -2 \sqrt{10}
+    \end{pmatrix}
+\end{equation}
 
 % Simply upload additional images Heading5.jpg, Heading6.jpg etc. into the pictures folder
 

@@ -1251,7 +1251,65 @@ The line normal to S in $(x_0,y_0,z_0)$ can be defined as:
     \vec{n}(t) = \vec{x_0} + t\vec{\Delta} F(x_0,y_0,z_0)
 \end{equation}
 
-\subsection{Examples}
+\section{Iterated Partial derivatives:}
+
+\paragraph*{addendum}
+
+Remember:
+\begin{itemize}
+    \item $f \exists C^o$ means a function is continuous
+    \item $f \exists C^1$ means f' is continuous
+    \item $f \exists C^k$ means the k derivative is continuous
+\end{itemize}
+
+\subsection{Iterated derivatives}
+let:
+
+\begin{equation}
+    f(x,y) = x^2 y^3 - 3x^4 y
+ \end{equation}
+
+then:
+
+\begin{gather}
+    f_x(x,y) = 2xy^3 - 12x^3 y \\
+    f_y(x,y) = 3x^2 y^2 - 3x^4 \\
+    f_{xx} = 2y^3 - 36x^2y \\
+    f_{xy} = 6xy^2 - 12x^3 \\
+    f_{yx} = 6xy^2 - 12x^3 \\
+    f_(yy) = 6x^2y
+\end{gather}
+
+As we can see, equations 4,51 and 4,52 are equivalent, this is because when we do
+such chained differentiations, we can guarantee:
+
+\begin{equation}
+    \frac{\delta}{\delta y} (\frac{\delta f }{\delta x}) = \frac{\delta^2 f}{\delta y \delta x}
+\end{equation}
+
+\subsection{Clairaut's Theorem}
+
+If $ f(xy), f(yx) $ are continuous, then $f_{xy} = f_{yx}$ 
+
+\subsubsection*{Proof}
+
+Okay, this might get a bit technical, but here we go:
+
+As written by Kiril Datchev from Purdue\cite[]{} (give his stuff a read, it's pretty cool), we can take as a given:
+
+By definition:
+\begin{itemize}
+    \item \begin{equation}
+        \delta_x \delta_y f(a,b) = \lim_{h \to 0} \frac{\delta_y f(a + h, b) - \delta_y f(a,b)}{h}
+    \end{equation}
+\end{itemize}
+
+So from this, we can deduce:
+\begin{gather}
+    \\
+\end{gather}
+
+\section{Examples}
 \paragraph*{Find the gradient in P=(0,3) if $f(x,y)=2ye^{xy}+ y \cos x$} 
 We can use what we know of partial derivatives to affirm:
 \begin{gather}
@@ -1324,6 +1382,39 @@ And the line can be defined therefore as:
         -2 \sqrt{10}
     \end{pmatrix}
 \end{equation}
+
+\section{important expressions}
+\begin{itemize}
+    \item Tangent Planes:
+    \begin{equation}
+        \frac{\delta F}{\delta x}(x_0,y_0,z_0)(x-x_0) + \frac{\delta F}{\delta y}(x_0,y_0,z_0)(y-y_0) + \frac{\delta F}{\delta z}(x_0,y_0,z_0)(z-z_0) = 0 
+    \end{equation}
+    \item Directional Derivative:
+    \begin{equation}
+        \frac{d}{dt}f(x_0+tu,y_0+tu_z) | 0
+    \end{equation}
+\end{itemize}
+
+\chapterimage{Heading4.jpg} % Chapter heading image
+
+\chapter{Superior order derivatives}
+
+\section{Taylor's Theorem}
+let
+
+$$ f: \mathbb{R} \to \mathbb{R} $$
+
+Then:
+\begin{equation}
+    F(x) = F(a) + F'(a) (x-a) + \frac{F''(a)}{\alpha !} (x-a)^2 + \dots + \frac{F^{(k)}(x-a)^k}{k!} (x-a)^k + error    
+\end{equation}
+
+this can also be written as:
+\begin{equation}
+    \Delta F(t_0) = F(t_0+\Delta t) - F(t_0)
+\end{equation}
+
+
 
 % Simply upload additional images Heading5.jpg, Heading6.jpg etc. into the pictures folder
 

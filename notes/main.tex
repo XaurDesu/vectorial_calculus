@@ -572,7 +572,7 @@ Cartesian coordinates generally translate well to other dimensional spaces, such
 for $ \mathbb{R}^3 $, however, polar coordinates as we know them usually aren't as translatable in a direct
 manner, and expressing them in three-dimensional spaces might be better suited to 
 be expressed on a cylindrical or spherical condition. 
-\subsubsection*{Cylindrical coordinates}
+\subsection{Cylindrical coordinates}
 In the case of cylindrical coordinates, the translation is probably the most intuitive, by computing
 a cylinder with polar coordinates that indicate an (x,y) position, and a 'Z' variable indicating height 
 that allows us to project the vector on a third dimension, this 'z' variable is exactly the same as it would be
@@ -590,9 +590,17 @@ conversion to a cartesian model can be expressed as:
         \alpha_z = Z
     \end{cases}
     \text{\textit{Cylindrical to cartesian}}
+    \\
+    \vec(\alpha) =
+    \begin{cases}
+        \rho = \sqrt{x^2 + y^2} \\
+        \theta =  \arctan(\frac{y}{x}) \\
+        Z = Z
+    \end{cases}
+    \text{\textit{Cartesian to Cylindrical}}
 \end{gather}
 
-\subsubsection*{Spherical coordinates}
+\subsection{Spherical coordinates}
 
 A spherical coordinate is formed by a tuple:
 
@@ -633,7 +641,14 @@ And can be converted to a cartesian model as such:
         \alpha_y = \rho \sin \phi \sin \theta \\
         \alpha_z = \rho \cos \phi
     \end{cases}
-    \text{\textit{Spherical to cartesian}}
+    \text{\textit{Spherical to cartesian}} \\ 
+    \vec(\alpha) =
+    \begin{cases}
+        \rho = \sqrt{x^2 + y^2 + z^2} \\
+        \theta =  \arctan(\frac{y}{x}) \\
+        \phi = \arccos(\frac{z}{\rho})
+    \end{cases}
+    \text{\textit{Cartesian to Spherical}}
 \end{gather}
 
 \paragraph{Example}
@@ -926,7 +941,7 @@ The general formula of a parabolic is:
     y = ax^2
 \end{equation}
 
-\subsection{sphere}
+\subsection{Spheres}
 
 \begin{equation}
     \begin{cases}
@@ -1016,7 +1031,7 @@ For a limit to exist, we need three conditions to be met:
 \end{itemize}
 
 
-\subsubsection*{Multivariable limits}
+\subsubsection{Multivariable limits}
 
 a limit in a multi variable plane can be defined as: 
 
@@ -1132,6 +1147,43 @@ and if they're continuous in an open set 'D'.
     \lim_{(x,y) \to (0,0)}  \frac{xy}{x^2+y^2} NE
 \end{gather}
 
+\subsection{Examples}
+\begin{itemize}
+    \item Solve:
+
+\begin{equation}
+    \lim_{(x,y) \to (0,0)}  \frac{\cos - 1 - \frac{x^2}{2}}{x^4+y^4}
+\end{equation}
+
+This limit \textbf{DOES NOT EXIST}:
+
+because going by paths we can assume:
+
+$$<x=0>$$
+
+Would imply:
+\begin{gather}
+    \lim_{y \to 0} \frac{\cos 0 - 1 - \frac{0^2}{2}}{0^4 + y^4} \\
+    \lim_{y \to 0} \frac{0}{y^4} = \lim_{y \to 0} 0 = 0
+\end{gather}
+
+$$<y=0>$$
+
+Would imply:
+\begin{gather}
+    \lim_{x \to 0} \frac{\cos x - 1 - \frac{x^2}{2}}{x^4} \implies \frac{0}{0} \\
+    \text{<l'Hopital because of indetermination>}\\
+    \lim_{x \to 0} \frac{- \sin x - x}{4x^3} \\
+    \text{<l'Hopital because of indetermination... again.>} \\
+    \lim_{x \to 0} \frac{- \cos x - 1}{12x^2} \\
+    \dots
+\end{gather}
+
+...and it will never stop differentiating until a $\mathbb{R}$ value is divided by 0, which
+isn't possible without imaginary numbers, which will be ignored for now. This might or might not come later in your studies. Wouldn't count on it
+
+Would imply:
+\end{itemize}
 \section{Continual Functions}
 
 A function can be defined as continual if a limit can be described as:
@@ -1317,7 +1369,7 @@ As we can see, equations 4,51 and 4,52 are equivalent, this is because when we d
 such chained differentiations, we can guarantee:
 
 \begin{equation}
-    \frac{\delta}{\delta y} (\frac{\delta f }{\delta x}) = \frac{\delta^2 f}{\delta y \delta x}
+    \frac{\partial}{\partial y} (\frac{\partial f }{\partial x}) = \frac{\partial^2 f}{\partial y \partial x}
 \end{equation}
 
 \subsection{Clairaut's Theorem}
@@ -1333,7 +1385,7 @@ As written by Kiril Datchev from Purdue\cite[]{} (give his stuff a read, it's pr
 By definition:
 \begin{itemize}
     \item \begin{equation}
-        \delta_x \delta_y f(a,b) = \lim_{h \to 0} \frac{\delta_y f(a + h, b) - \delta_y f(a,b)}{h}
+        \partial_x \partial_y f(a,b) = \lim_{h \to 0} \frac{\partial_y f(a + h, b) - \partial_y f(a,b)}{h}
     \end{equation}
 \end{itemize}
 

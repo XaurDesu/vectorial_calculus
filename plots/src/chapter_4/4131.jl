@@ -5,3 +5,4 @@ using Plots
 x = y = range(-5, 5, length = 40)
 
 f(x,y) = cos(x)-1-(x^2/2)/x^4+y^4
+plot(x, y, f, st = [:surface, :contourf])

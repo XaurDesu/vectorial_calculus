@@ -1530,8 +1530,8 @@ Generally, we can assume that given a theorem from $\mathbb{R}^n \to \mathbb{R}^
         . \\
         h_n
     \end{pmatrix} \text{then:} \\
-    f(\vec{x_0}+ \vec{h}) = f(\vec{x}_0) + \sum_{1}^{n} \frac{\delta f}{\delta x_i}(\vec{x_0}) + \frac{1}{2!} \sum_{i,j = 1}^{n} h_i h_j \frac{\delta^2 f}{\delta x_i \delta x_j} \vec{x_0} +  
-    \frac{1}{3!} \sum_{i,j,k = 1}^{n} h_i h_j h_k \frac{\delta^3 f}{\delta x_i \delta x_j \delta x_k} \vec{x_0} + \dots 
+    f(\vec{x_0}+ \vec{h}) = f(\vec{x}_0) + \sum_{1}^{n} \frac{\partial f}{\partial x_i}(\vec{x_0}) + \frac{1}{2!} \sum_{i,j = 1}^{n} h_i h_j \frac{\partial^2 f}{\partial x_i \partial x_j} \vec{x_0} +  
+    \frac{1}{3!} \sum_{i,j,k = 1}^{n} h_i h_j h_k \frac{\partial^3 f}{\partial x_i \partial x_j \partial x_k} \vec{x_0} + \dots 
 \end{gather}
 
 ...That being said, we can mostly just stay with two. Triple derivatives are sure as hell weird. 
@@ -1543,7 +1543,134 @@ $$ D \subseteq x^2 + y^2 \leq R^2 $$
 and:
 $$ D \subseteq \mathbb{R}^2 \to \mathbb{R} $$
 
+We can express this as:
+\begin{gather}
+    f: D \subseteq \mathbb{R}^2 \to \mathbb{R} \\
+    p \exists D \ is: \ \begin{cases}
+        \max \ if \ f(p) \geq f(x) \forall x \exists D \\
+        \min \ if \ f(p) \leq f(x) 
+    \end{cases}
+\end{gather}
 
+And we can also localize this to a specific region of the set, as a local
+minimum or maximum, think of it as p being a subset of a set, and then write it
+in the same way as you write above:
+
+
+\paragraph{Theorem: }
+
+'f' has a local maximum or a minimum in $(x_0, y_0)$ , 
+if an interior point of D and the partial derivatives of 'f' exist in
+$ (x_0, y_0) $ , then:
+
+\begin{gather}
+    f_x = (x_0, y_0) = 0 \wedge f_y(x_0, y_0) = 0
+\end{gather}
+
+\subsection{Critical Points}
+
+p is a critical point of an f function if all partial derivatives are zero in such a point. 
+
+\paragraph{Example}
+\begin{gather}
+    f(x,y) = x^2 + y^2 = \begin{cases}
+        f_x = 2x = 0 \\
+        f_y = 2y = 0
+    \end{cases} \min(0,0)
+\end{gather}
+
+We can see similar behavior in a hyperbolic paraboloid, but here, it wont be an absolute minimum for both points.
+
+\paragraph{Example}
+\begin{gather}
+    f(x,y) = x^2 - y^2 = \begin{cases}
+        f_x = -2x = 0 \\
+        f_y = -2y = 0
+    \end{cases}
+\end{gather}
+
+Every critical point is a candidate to be an absolute maximum or minimum, but won't nescessarily be. 
+in any case, partial derivatives are a good tool for finding them through the critical points of a function.
+
+If f has continuous second-order continuous derivatives, then:
+
+\begin{equation}
+    \vec{D}^2_{\vec{u}} f(x_0,y_0) = \vec{D}_{\vec{u}} \vec{D}_{\vec{u}} f(x_0,y_0)\\
+\end{equation}
+
+Is a directional derivative of (x,y) in u , we can calculate it as:
+
+\begin{gather}
+    D_{\vec{u}}f(x,y) =\vec{\nabla} f \centerdot \vec{u} = <fx, fy> \centerdot <h,k> \\
+    \vec{\nabla}(h f_x+ k f_y) \centerdot \vec{u} = <h f_{xx} + k f_{yx}, h f_{xy} + k f_{yy}>
+\end{gather}
+
+By developing this further, we'll arrive to a discriminant matrix of the sort:
+
+\begin{equation}
+    \begin{pmatrix}
+        f_{xx} & f_{xy} \\
+        f_{yx} & f_{yy}
+    \end{pmatrix} = det
+\end{equation}
+
+from whatever this gives us, we can say:
+
+\begin{equation}
+    D = det \implies \\
+    \begin{cases}
+    \text{if: } D > 0 \wedge  f_{xx} > 0 \implies (x_0 , y_0) = \min \text{ local} \\
+    \text{if: } D > 0 \wedge  f_{xx} < 0 \implies (x_0 , y_0) = \max \text{ local} \\            
+    
+    \end{cases}
+\end{equation}
+
+\section{Examples}
+
+\paragraph*{Given 3 non-negative numbers with a 120 overall sum, find the maximal value of x,y,z}
+\begin{gather}
+    x+y+z=120 \implies z = 120-x-y \\
+    f(x,y) = xy(120-x-y)\\
+    \{ x,y | x,y \exists \mathbb{R}^2 \geq 0; x \leq 120 - y; y \leq x - 120 \} \\
+    \text{<Implies y = -x + 120 >}
+\end{gather}
+
+we can graph it as:
+
+\begin{center}
+    \includegraphics*[scale=0.5]{line.png}
+\end{center}
+
+from this we can say, by calculating the area:
+
+\begin{equation}
+    f(x,y) = 120xy -x^2y - xy^2
+\end{equation}
+
+And now we differentiate:
+
+\begin{gather}
+    f_x = 120y -2xy - y^2 \\
+    f_y = 120x - 2xy -y^2 \\
+    \text{<Minimals>} \\
+    120 - 2x - y = 0 \implies x = 0 \vee y = 0 \
+\end{gather}
+
+and from linear algebra, we can do:
+
+\begin{gather}
+    \begin{pmatrix}
+        -2 && -1 | -120 \\
+        -1 && -2 | -120
+    \end{pmatrix} 
+\end{gather}
+
+after solving this we can say:
+
+\begin{gather}
+    x = 40 \implies y = 40 \implies z = 40 \\
+    f(40,40,40) = (40^3)
+\end{gather}
 
 % Simply upload additional images Heading5.jpg, Heading6.jpg etc. into the pictures folder
 

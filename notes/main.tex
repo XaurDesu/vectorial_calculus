@@ -1548,7 +1548,7 @@ We can express this as:
     f: D \subseteq \mathbb{R}^2 \to \mathbb{R} \\
     p \exists D \ is: \ \begin{cases}
         \max \ if \ f(p) \geq f(x) \forall x \exists D \\
-        \min \ if \ f(p) \leq f(x) 
+        \min \ if \ f(p) \leq f(x)   
     \end{cases}
 \end{gather}
 
@@ -1570,6 +1570,10 @@ $ (x_0, y_0) $ , then:
 \subsection{Critical Points}
 
 p is a critical point of an f function if all partial derivatives are zero in such a point. 
+
+given a continuous function $f: D \to \mathbb{R} $
+that's closed and bound, then f will achieve its 
+minimum and maximum values.
 
 \paragraph{Example}
 \begin{gather}
@@ -1625,6 +1629,31 @@ from whatever this gives us, we can say:
     \end{cases}
 \end{equation}
 
+\section{Restricted extremes and Lagrange multiplicators}
+
+\begin{center}
+    \includegraphics*[]{Pictures/lagrange.jpg}
+\end{center}
+
+Given a curve 'C' in the plane x,y in the plane: g(x,y) = k,
+given that g has $\partial '$ and $\vec{\Delta} g \neq 0$,
+finding minimums and maximums of f(x,y) alongside 'C.
+f has continuous $\partial '$. 
+
+If we assume f to have a maximum or minimum in $(x_0, y_0)$, then:
+\begin{gather}
+    D_{\vec{T}}f(x_0,y_0) = 0 \\
+    \underbrace{\vec{\Delta}f(x_0,y_0)}_{\exists \mathbb{R}^2} \centerdot \underbrace{\vec{I}}_{\exists \mathbb{R}} = 0
+\end{gather}
+
+If we assume f(x,y,z) having an extreme point $(x_0,y_0,z_0)$ on a surface S:
+$g(x,y,z) = k$ then for a plane P:
+
+\begin{gather}
+    D_{\vec{u}}f(x_0,y_0,z_0) = 0 \forall \vec{u} \exists P \\
+    \vec{\triangledown} f(x_0,y_0,z_0) = 0 \forall \vec{u}\\
+\end{gather}
+
 \section{Examples}
 
 \paragraph*{Given 3 non-negative numbers with a 120 overall sum, find the maximal value of x,y,z}
@@ -1670,6 +1699,68 @@ after solving this we can say:
 \begin{gather}
     x = 40 \implies y = 40 \implies z = 40 \\
     f(40,40,40) = (40^3)
+\end{gather}
+
+
+%\paragraph*{find the absolute maximum and minimum of $f(x,y) = x^2+2xy+3y^$ in a closed triangle with vertices in $(-1,1),(2,1),(-1,2)$}
+
+\paragraph{Find the absolute maximum and minimums of $f(x,y) = x^2+2xy+3y^2$
+in a closed triangle with vertices in $(-1,1),(2,1),(-1,2)$}
+
+\begin{gather}
+    f_x = 2x+ 2y = 0 \\
+    f_y = 2x + 6y = 0 \\
+    <therefore> \\
+    y = 1 \\
+    0 \centerdot x - 4y +0 \implies y = 0; x = 0; f(0,0)=0 \\
+    y = 1; f(x,1) = x^2+2x+3 \\
+    x = -1\\
+    g'(x) = 2x + 2 = 0 \implies x = -1 \implies f(-1,1) = 1-2+3 = 2\\
+    g(y) = f(-1,y) = 1 - 2y + 3y^2\\
+    g'(y) = 6y-2 + 0 \implies y = \frac{1}{3} \implies (-1, \frac{1}{3}), f(-1, \frac{1}{3}) = \frac{2}{3} \\
+    y = x-1 \\
+\end{gather}
+
+\paragraph{Find the points over the surface $xyz = 8$
+that are the closest to the origin (0,0,0)}
+\begin{center}
+%    \includegraphics*[scale=0.5]{xyz8.png}
+    \textit{pictured: the surface to be analyzed}
+\end{center}
+
+\begin{gather}
+    f(x,y) = \sqrt{x^2+y^2+\frac{6y}{x^2 y^2}} \\
+    g(x,y) = x^2 + y^2 + \frac{6y}{x^2 y^2} \\
+    \begin{cases}
+        g_x = 2x - \frac{128}{x^3 y^2} \\
+        g_y = 2y - \frac{128}{x^2 y^3}             
+    \end{cases} \implies 2x^4 y^4 = 128 < = > x^4 = \frac{64}{y^2} <=> x^2 = \pm \frac{8}{y} \\
+    <Case \ 1:> \ x^2 = \frac{8}{y}\\
+    2y^4 x^2 = 128 \implies 2y^4 \frac{8}{y} \implies y^3 = 8 \implies y = 2 \implies x^2 = 4 \implies x \pm 2 \implies (2,2) \wedge (-2,2)\\
+    <Case \ 2:> \ x^2 = - \frac{8}{y}\\
+    \dots y^3 = -8 \implies y = -2 \implies x^2 = 4 \implies x \pm 2 \implies (2,-2) \wedge (-2,-2)\\
+    f(\pm 2, \pm 2) = \sqrt{12}
+\end{gather}
+
+The closer points to the origin are (2,2,2), (-2,2,-2), (2,-2,-2), (-2,-2,2)
+
+\paragraph{Find the extremes of $f(x,y) = xy$ alongside the elipse
+$\underbrace{4x^2+y^2=4}_{g(x,y)}$}
+Note: extreme values are different from 0, and xy is different from 0
+
+\begin{gather}
+    \vec{ \triangledown } f(x,y) = \lambda \vec{\triangledown} g(x,y)\\
+    <x,y> = \lambda <8x,2y> <=> \begin{cases}
+        y = \lambda 8x: I \\
+        x = \lambda 2y: II \\
+        4x^2 + y^2 = 4: III
+    \end{cases} \\
+    \frac{I}{II}: \frac{y}{x} = \frac{4x}{y} <=> y^2 = 4x^2 \\
+    4x^2 + 4x^2 = 4 \\
+    8x^2 = 4 \\
+    x^2 = \frac{1}{2} \\
+    x \pm \frac{1}{\sqrt{2}} \\
+    y^2 = 2, y \pm \sqrt{2}
 \end{gather}
 
 % Simply upload additional images Heading5.jpg, Heading6.jpg etc. into the pictures folder

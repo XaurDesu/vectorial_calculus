@@ -907,6 +907,8 @@ We replace fot this as following:
     1x + 2y + 3z = 1*1+2*1+3*1 \implies 1x + 2y + 3z = 6
 \end{equation}
 
+z = f(x,y) can also be a way to define a plane through a function, however, this is a bit 
+limiting, as z is not free. However, tangent planes can be found in a fairly easy way
 
 \subsection{Elipsoids}
 
@@ -959,8 +961,6 @@ The general formula of a paraboloid is:
 \end{equation}
 
 This shape has a variation, called a hyperbolic paraboloid:
-
-
 \begin{equation}
     z = (\frac{x}{a})^2 - (\frac{y}{b})^2
 \end{equation}
@@ -969,6 +969,29 @@ It will look like this when graphicated:
 \begin{center}
     \includegraphics*[]{Pictures/hyperbolic_paraboloid.png}    
 \end{center}
+
+\section{Examples}
+
+\paragraph{Calculate the tangent plane of $z e^z x y^2 = 0$ in the point $(\frac{\pi}{2},1,0)$}
+
+\textit{Solution}
+\begin{gather}
+    z e^z x y^2 = 0 \\
+    f(x,y) = \cos x \sin y e^z \\
+    \begin{cases}
+    \frac{\partial_F}{\partial_x} = - \sin x \cos y e^z  \\
+    \frac{\partial_F}{\partial_y} = - \cos x \cos y e^z \\
+    \frac{\partial_F}{\partial_z} =  \cos x \cos y e^z
+    \end{cases} \\
+    \frac{\partial_F}{\partial_x} = - \sin \frac{\pi}{2} \cos (1) e^0 = - \cos (1)\\
+    \frac{\partial_F}{\partial_y} = - \cos \frac{\pi}{2} \sin 1 e^0 = 0 \\
+    \frac{\partial_F}{\partial_z} = 0 \\
+    - \cos(1) (x - \frac{\pi}{2}) + 0(y-1) + 0(z-0) = 0 \\
+    - \cos (1) (x - \frac{\pi}{2}) = 0 \\
+    x - \frac{\pi}{2} = 0\\
+    x = \frac{\pi}{2}
+\end{gather}
+
 
 \chapter{Limits and continuity}
 \subsection*{Sets and disks}

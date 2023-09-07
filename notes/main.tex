@@ -1677,6 +1677,97 @@ $g(x,y,z) = k$ then for a plane P:
     \vec{\triangledown} f(x_0,y_0,z_0) = 0 \forall \vec{u}\\
 \end{gather}
 
+\section{Implicit function theorem}
+
+Let a function 'F(x,y) = 0' that is the implicit equation of a curve in xy;
+then:
+
+\paragraph*{Example}
+\begin{gather}
+    \frac{x^2}{a^2} + \frac{y^2}{b^2} - 1 = 0 \\
+    y = \pm \sqrt{(1-\frac{x^2}{a^2})b^2} = \pm \sqrt{\frac{b^2}{a^2}(a^2 - x^2)}; x \exists [-a, a]
+\end{gather}
+
+This is an example of a situation where fiven F(x,y)=0 and $ (x_0, y_0) $, expressed together
+as $F(x_0,y_0)=0$ we would like to know if we gan obtain
+
+\subsection{Theorem 1}
+Let:
+
+\begin{itemize}
+    \item a F(x,y) defined and continuous in a rectangle centered on our point $(x_0, y_0)$; then
+    $ D = [x_0 - \triangle, x_0 + \triangle; y_0 - \triangle, y_0 + \triangle] $
+    \item $F(x_0, y_0) = 0$
+    \item $y \rightarrow F(x,y)$ increases (or reduces) in a strictly monotonous fashion.
+\end{itemize}
+
+Then:
+
+\begin{itemize}
+    \item in a vecinity of the point, (*) can determine as a function of $x: y = f(x)$
+    \item $f(x_0) = y_0$
+    \item f is continuous
+\end{itemize}
+
+\subsection{Theorem 2}
+
+We'll assume, besides that we assumed on our first theorem:
+\begin{itemize}
+    \item $F_y = (x_0,y_0) \neq 0$
+    \item $\partial_x, \partial_y$ exist and are continuous.
+\end{itemize}
+
+Then, including what we concluded on the first iteration, we can conclude that:
+\begin{itemize}
+    \item in a vecinity of the point, (*) can determine as a function of $x: y = f(x)$
+    \item $f(x_0) = y_0$
+    \item f is continuous
+    \item f'() exists and is continuous
+\end{itemize}
+
+let's remember a function is differentiable when:
+
+\begin{gather}
+    F_x (x,y) \Delta x + F_y (x,y) \Delta y + \epsilon_1 \Delta x + \epsilon_2 \Delta y, \epsilon_1, \epsilon_2 \rightarrow 0 \\
+    = \Delta x (F_x(x,y) + \epsilon_1) + \Delta y (F_y (x,y)+ \epsilon_2) \\
+    \frac{\Delta y}{\Delta x} = - \frac{F_x + \epsilon_1}{F_y = \epsilon_2}, \lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x} = - \frac{F_x(x,y)}{F_y(x,y) \neq 0}\\
+    f'(x)
+\end{gather}
+
+\subsection{Theorem 3}
+
+We assume:
+\begin{itemize}
+    \item $F(x_1,\dots,x_n, y)$ is defined and continuous over $D = [\dots]$
+    \item $f(x_1^0,\dots,x_n^0,y_0) = 0$ \\
+    \item $f_y \neq 0$
+    \item $f_{x1}, \dots, f_{xn}, f_y$ exist and are continuous
+\end{itemize}
+
+then:
+
+\begin{itemize}
+    \item in a vecinity $(x_1^0, \dots, x_n^0, y_0),(**)$ determines as a function
+\end{itemize}
+
+\subsection*{General Theorem}
+
+In general, we'll say that $F_1(x_1 \dots, x_n, y_1, \dots, y_n) = 0 = (***)$
+
+then $\underbrace{(***)}_{determines} y_1, \dots, y_n$ as functions of  $x_1, \dots, x_n$ 
+if for every $(x_1, \dots, x_n) \exists (a,b, \dots; \dots) = z$ the system has a single solution
+$y_1, \dots, y_n$
+
+Instead of $F_y (x_0, y_0) \neq 0$ we can say that a Jacobian can be determined as a Hessian of the type:
+
+\begin{gather}
+    J = \frac{D(F_1, \dots, F_n)}{D(y_1, \dots, y_n} = \begin{vmatrix}
+        \frac{\partial F_1}{\partial y_1} & \dots & \frac{\partial F_1}{\partial y_n} \\
+        \dots & \dots & \dots \\
+        \frac{\partial F_n}{y_1} & \dots & \frac{\partial F_n}{y_n} 
+    \end{vmatrix}
+\end{gather}
+
 \section{Examples}
 
 \paragraph*{Given 3 non-negative numbers with a 120 overall sum, find the maximal value of x,y,z}
@@ -1765,8 +1856,7 @@ And from that:
         3 & 2
     \end{pmatrix} \\
     \Delta = det \ Hf (0,0) \\
-    \Delta = -5 \text \\
-    {(Inflection point)}
+    \Delta = -5 \\ \text{(Inflection point)}
 \end{gather}
 
 \paragraph{Find the absolute maximum and minimums of $f(x,y) = x^2+2xy+3y^2$
@@ -1826,6 +1916,26 @@ Note: extreme values are different from 0, and xy is different from 0
     x^2 = \frac{1}{2} \\
     x \pm \frac{1}{\sqrt{2}} \\
     y^2 = 2, y \pm \sqrt{2}
+\end{gather}
+
+\paragraph{Find the volume of a rectangular box defined by three planes and a vertex in (0,0,0),
+under $3x + 2y + z = 6$}
+
+\begin{gather}
+    f(x,y,z) = xyz \\
+    \vec{\triangledown}f(x,y,z) = \lambda \vec{\triangledown} g (x,y,z) \\
+    <yz,xz,xy> = \lambda <3,2,1> \\
+    \begin{cases}
+        yz = 3 \lambda \\
+        xz + 2 \lambda \\
+        xy = \lambda \\
+        3x + 2y + z = 6
+    \end{cases}\\
+    \frac{I}{II} <=> \frac{y}{x} = \frac{3}{2} <=> 2y = 3x \\
+    \frac{II}{III} <=> \frac{7}{y} = 2 <=> z = 2y\\
+    3x+3x+3x=6\\
+    9x=6 \implies x = \frac{2}{3} \implies y = 1 \\
+    \implies z = 2
 \end{gather}
 
 % Simply upload additional images Heading5.jpg, Heading6.jpg etc. into the pictures folder

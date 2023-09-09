@@ -1750,7 +1750,7 @@ then:
     \item in a vecinity $(x_1^0, \dots, x_n^0, y_0),(**)$ determines as a function
 \end{itemize}
 
-\subsection*{General Theorem}
+\subsection{General Theorem}
 
 In general, we'll say that $F_1(x_1 \dots, x_n, y_1, \dots, y_n) = 0 = (***)$
 
@@ -1767,6 +1767,47 @@ Instead of $F_y (x_0, y_0) \neq 0$ we can say that a Jacobian can be determined 
         \frac{\partial F_n}{y_1} & \dots & \frac{\partial F_n}{y_n} 
     \end{vmatrix}
 \end{gather}
+
+Put under the logic of the previous statements, we would say:
+
+\begin{itemize}
+    \item $F_i$ is defined and continuous
+    \item The point $(x_1^0, \dots , y_n^0;y_1^0, \dots , y_n^0)$ satisfies (***)
+    \item $J(x_1^0, \ dots, y_n^0)\neq 0$ 
+    \item $\partial '$ of $F_i$ are continuous in all variables
+\end{itemize}
+
+Then:
+
+\begin{itemize}
+    \item in a  $(x_1^0, \dots , y_n^0;y_1^0, \dots , y_n^0)$ vecinity it can be determined by (***)
+    \item $f_j (x_1^0, \dots, x_n^0) = y_j^0$
+    \item $f_j$ is continuous
+    \item Partial derivatives of $f_j$ are continuous
+\end{itemize}
+
+\subsubsection*{Demonstration}
+\begin{gather}
+    m = 1 \ complies \ Theorem \ 3; \\
+    \text{Theorem 3} m - 1 \implies \text{Theorem 3} m \\
+    J(X_1^0, \dots y_1^0) \neq 0\\
+    <induct \ \frac{\partial F_m}{\partial y_m}(x_1^0 \dots x_n^0) \neq 0 > \\
+    <Theorem \ 3 = T_3>\\
+    T_3 \implies F_m(x_1, \dots y_m) = 0; D^* \subseteq D\\
+    y_m = f(n)(x,y)\\
+    y_m = \phi (x_1 \dots x_n, y_1 \dots y_n)\\
+    \implies F_m(x_1 \dots y_{m-1};\phi (x_1 \dots x_n, y_1 \dots y_n)) = 0, \\
+    <\phi \ continuous \ ; \partial ' \ exist>\\
+    J* = \frac{d(\phi_1, \dots \phi_m-1)}{d(y_1, \dots, y_{m-1})} = \begin{vmatrix}
+        \frac{\partial \phi_1}{\partial y_0} & \dots & \frac{\partial \phi_1}{\partial y_{m-1}}\\
+        \dots & \dots & \dots \\
+        \frac{\partial \phi_1}{\partial y_{m-1}} & \dots & \frac{\partial \phi_{m-1}}{\partial y_{m-1}}
+    \end{vmatrix}\\
+    <Chain \ Rule>\\
+    F_m(x_1, \dots, y_m-1, \phi (x_1, \dots, y_m-1)) = 0\\
+    J = J^* \centerdot \frac{\partial F_m}{\partial y_m} \neq 0 \implies J \exists T_3
+\end{gather}
+
 
 \section{Examples}
 

@@ -2012,8 +2012,55 @@ under $3x + 2y + z = 6$}
     \Delta = -4xy - (2x - 2y)^2
 \end{gather}
 
+\paragraph{Given polar coordinates, when will be able to solve it's values from (x,y,z)?}
 
+\begin{gather}
+    \cos \phi ( \rho^2 \cos \phi \sin \phi \cos^2 
+    \theta + \rho^2 + \cos \phi \sin \phi \sin^2 
+    \theta ) + \rho \sin \phi 
+    \begin{cases}
+        \rho \sin \phi \cos^2 \theta \\
+        + \rho \sin^2 \phi \sin^2 \theta
+    \end{cases}\\
+    \implies \rho 2 \sin \phi
+\end{gather}
 
+Therefore, when a determinant is not 0 we can do it.
+
+\paragraph{consider the function $f(x,y)=(\frac{x^2-y^2}{x^2+y^2}, \frac{xy}{x^2 + y^2}) ; k \pi ; k \exists \mathbb{Z} $
+Does this function have a local inverse near $(x,y) = (0,1)$?}
+
+\begin{gather}
+    \frac{\partial f_1}{\partial x} = \frac{4xy^2}{(x^2+y^2)^2}\\
+    \frac{\partial f_1}{\partial y} = \frac{-4xy^2}{(x^2+y^2)^2} \\
+    \frac{\partial f_2}{\partial x} = \frac{y(y^2-x^2)}{(x^2+y^2)^2}\\
+    \frac{\partial f_2}{\partial y} = \frac{x(x^2-y^2)}{(x^2+y^2)^2} \\
+\end{gather}
+
+There is no solution for any values. No points are formed due to the Jacobian having a determinant of 0
+
+\chapter{Functions with vectorial values}
+
+\section{Trajectories and Velocity}
+Let:
+\begin{gather}
+    \vec{r}(t) = <x(t), y(t), z(t)>\\
+    \vec{r} = [a,b] \to \mathbb{R^3} \\
+    lim_{t \to t_0} \vec{r}(t) = <lim_{t \to t_0}x(t), lim_{t \to t_0}y(t), lim_{t \to t_0}z(t)>
+\end{gather}
+
+Then:
+\begin{gather}
+    \vec{r}'(t) =  <x'(t), y'(t), z'(t)>\\
+    \vec{r}(t) = \text{position vector}\\
+    \vec{r}'(t) = \text{velocity vector}\\
+    ||\vec{r}'(t)||=\text{speed of vector}
+\end{gather}
+
+We can calculate a tangent line to this, $\vec{r}(t)$ in $t_0$ as follows:
+\begin{equation}
+    l(\lambda) = \vec{r}(t_0) + \lambda \vec{r}(T_0)
+\end{equation}
 % Simply upload additional images Heading5.jpg, Heading6.jpg etc. into the pictures folder
 
 % \chapterimage{Heading5.jpg}

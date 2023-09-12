@@ -2045,7 +2045,7 @@ There is no solution for any values. No points are formed due to the Jacobian ha
 Let:
 \begin{gather}
     \vec{r}(t) = <x(t), y(t), z(t)>\\
-    \vec{r} = [a,b] \to \mathbb{R^3} \\
+    \vec{r} = [a,b] \to \mathbb{R}^3 \lor \mathbb{R}^2  \\
     lim_{t \to t_0} \vec{r}(t) = <lim_{t \to t_0}x(t), lim_{t \to t_0}y(t), lim_{t \to t_0}z(t)>
 \end{gather}
 
@@ -2061,6 +2061,99 @@ We can calculate a tangent line to this, $\vec{r}(t)$ in $t_0$ as follows:
 \begin{equation}
     l(\lambda) = \vec{r}(t_0) + \lambda \vec{r}(T_0)
 \end{equation}
+
+\section{Arc Length}
+given $\vec{r}(t): [a,b] \to \mathbb{R}^3$, we can imagine two points from which a line can be derived.
+We can assume x,y,z to be differentiable, and say:
+
+\begin{gather}
+    ||\vec{r}(t_{i+1}) - \vec{r}(t_{i}) ||\\
+    \frac{X(t_{i+1} - x(t_i))}{t_{i+1} - t_i} = x' (\theta_i^x); t_i < \theta_i^x < t_{i+1}\\
+    \frac{y(t_{i+1} - y(t_i))}{t_{i+1} - t_i} = y' (\theta_i^y); t_i < \theta_i^y < t_{i+1}\\
+    \frac{z(t_{i+1} - z(t_i))}{t_{i+1} - t_i} = z' (\theta_i^z)\\
+    \int_{a}^{b} ||\vec{r}t||dt
+\end{gather}
+
+\section{Vectorial Fields}
+
+A vectorial field is a function that defines in $\mathbb{R}^n$ as $\vec{F}: A \subseteq \mathbb{R}^n \to \mathbb{R}^n$
+a vector for every point $\vec{F}(\vec{x})$
+
+For example, given an implicit surface F(x,y,z) = 0, we could find a tangent plane to every 
+
+A vectorial field is conservative if there exists a scalar 'f' function ($f: \mathbb{R} \ to \mathbb{R}$)
+such as: 
+$\vec{F} = \vec{\nabla f} \cdot f $ is a potential function.
+
+Every radial square vectorial inverse vectorial field conservative; this happens because:
+\begin{gather}
+    \vec{F} = \frac{C}{||r||^3} = x \frac{xi+yj+zk}{x^2+y^2+z^2} = \frac{cx}{()^{\frac{3}{2}}}i + \dots \\
+    f(x,y,z) = - \frac{c}{\sqrt{x^2+y^2+z^2}} = -c (x^2+y^2+z^2)^{-\frac{1}{2}}
+\end{gather}
+
+\section{Examples}
+
+\paragraph{Given $\vec{r}t = <6+3\sin t, 9, 4+3\cos t>$, can we determine it's a circle?}
+
+\begin{gather}
+    <Circle>\\
+    (x-a)^2 + (y-b)^2 = r^2\\
+    <function>\\
+    (x(t)-6)^2 + (z(t)-4)^2 = 9\\
+\end{gather}
+
+\textit{Now, can we find radius, and center?}
+\begin{gather}
+    r = \sqrt{9} = 3\\
+    c + (6,9,4)\\
+    \subseteq  \ plane \ y = 9
+\end{gather}
+
+\paragraph{Find a vectorial function such as it represents the segment between:$P=(1,-1,6); \ Q=(4,4,3)$}
+\begin{gather}
+    \vec{P-Q} = (1 - 4, -1 -4, 6-3)\\
+    \vec{P-Q} = (-3, -5, 3)\\
+    \vec{r} (t) = \begin{pmatrix}
+        1 \\
+        -1\\
+        6
+    \end{pmatrix} + \begin{pmatrix}
+        3 \\
+        5\\
+        -3
+    \end{pmatrix} t\\
+    \vec{r} t = <1+3t, -1+5t, 6-5t>; 0 \leq t \leq 1
+\end{gather}
+
+\paragraph*{Given $- \sin t, \cos t, t$; find projections over planes xy, xz and yz}
+We simply have to project the non-existing plane by making it 0.
+\begin{gather}
+    xy: <- \sin t, \cos t, 0>\\
+    xz: <-\sin t,0,t>\\
+    yz: <0, \cos t, t>
+\end{gather}
+
+\paragraph*{find the intersection curve between surfaces $y^2 - z^2 = x-2$ and $y^2 + z^2 = 9$
+where t = y as a parameter}
+
+\begin{gather}
+    y^2 - z^2 = x-2 \land y^2 + z^2 = 9\\
+    t^2 + z^2 = 9 \implies z = \pm \sqrt{9-y^2}\\
+    y^2 - z^2 = x-2 \to x = z^2 + 2 \to x = y^2 - (9-y^2) + 2\\
+    x = 2y^2 - 7\\
+    \vec{r}(t) = <2t^2-7, t, \pm \sqrt{9-t^2} >
+\end{gather}
+
+\paragraph*{find the tangent vector to $\vec{r}(t) = <1t^2,t>; -1 \leq t \leq 1$}
+\begin{gather}
+    \partial_t = \vec{r}' (1) = <-2,1>
+\end{gather}
+
+\paragraph*{Find the arc length of $\vec{r}(t) = (r \sin t, r \sin t)$}
+\begin{gather}
+    \int_{0}^{2\pi} \sqrt{(-r \sin t)^2 + (r \cos t)^2} \to \int_{0}^{2\pi} r dt = 2 \pi r
+\end{gather}
+
 % Simply upload additional images Heading5.jpg, Heading6.jpg etc. into the pictures folder
 
 % \chapterimage{Heading5.jpg}

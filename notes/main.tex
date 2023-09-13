@@ -2091,6 +2091,34 @@ Every radial square vectorial inverse vectorial field conservative; this happens
     f(x,y,z) = - \frac{c}{\sqrt{x^2+y^2+z^2}} = -c (x^2+y^2+z^2)^{-\frac{1}{2}}
 \end{gather}
 
+If $\vec{F}$ is a vectorial field then a flux line is for $\vec{F}$ a trayectory $\vec{r}(t)$ such as 
+$$\vec{r}' t = \vec{F}(\vec{r}t)$$
+
+\subsection{Divergence and rotation of a vectorial field.}
+
+Given:
+\begin{gather}
+    \mathbb{R}^3: \vec{\nabla} = i \frac{\partial}{\partial_x} + j \frac{\partial}{\partial_y} + k \frac{\partial}{\partial_z} \\
+    \mathbb{R}^n: \vec{\nabla} = <\frac{\partial}{\partial_{x1}}, \dots, \frac{\partial}{\partial_{xn}}>
+\end{gather}
+
+We can say this is, of course, a gradient, and for gradients we can say:
+\begin{gather}
+    \nabla(f+g) = \nabla f + \nabla g\\
+    \nabla(cg) = c \nabla(g), \ c \ cont. \\
+    \nabla(fg) = (\nabla f)g + f (\nabla g)\\
+    \nabla(\frac{f}{g}) = \frac{(\nabla f)g + f (\nabla g)}{g^2}, g(x \neq 0)
+\end{gather}
+
+Much like this gradient allows us to operate fields, there exists two other operators: divergence and 
+rotation.
+
+\subsubsection*{Divergence}
+\begin{gather}
+    \vec{F} = F_n i + F_n j + F_n k\\
+    div \vec{F} = \vec{\nabla} \cdot \vec{F} = \frac{\partial F_1}{\partial x} + \frac{\partial F_2}{\partial y} + \frac{\partial F_3}{\partial z}
+\end{gather}
+
 \section{Examples}
 
 \paragraph{Given $\vec{r}t = <6+3\sin t, 9, 4+3\cos t>$, can we determine it's a circle?}

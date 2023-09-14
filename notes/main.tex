@@ -2213,6 +2213,47 @@ this, given it is a cross product, we can also write this as:
 \begin{equation}
     -i (\frac{\partial F_3}{\partial_y}-\frac{\partial F_2}{\partial_z}) + j(\frac{\partial F_1}{\partial_z} - \frac{\partial F_3}{\partial_x}) + k (\frac{\partial F_2}{\partial_x} - \frac{\partial F_1}{\partial_y})
 \end{equation}
+
+\section{Differectial Vectorial Calculus}
+
+remembering cylindrical coordinates:
+
+\begin{gather}
+    \vec(\alpha) =
+    \begin{cases}
+        \alpha_x = \rho \cos \theta \\
+        \alpha_y = \rho \sin \theta \\
+        \alpha_z = Z
+    \end{cases}
+    \text{\textit{Cylindrical to cartesian}}
+    \\
+    \vec(\alpha) =
+    \begin{cases}
+        \rho = \sqrt{x^2 + y^2} \\
+        \theta =  \arctan(\frac{y}{x}) \\
+        Z = Z
+    \end{cases}
+    \text{\textit{Cartesian to Cylindrical}}
+\end{gather}
+
+\subsection{First theorem}
+
+
+given:
+\begin{equation}
+    f: D \subseteq \mathbb{R}^3 \to \mathbb{R}, \vec{F}: A \subseteq \mathbb{R}^3 \to \mathbb{R}^3;
+\end{equation}
+f, and $\vec{F}$ are differentiable.
+
+\begin{itemize}
+    \item $\vec{\nabla} f = \frac{\partial f}{\partial r} e_\rho + \frac{1}{\rho} \frac{\partial f}{\partial \theta} e_\theta + \frac{\partial f}{\partial z} e_z $
+    \item $div \vec{F} = \nabla \cdot \vec{F} = \frac{1}{\rho} = \frac{1}{r}[\frac{\partial}{\partial \rho} + \frac{\partial F_0}{\partial \theta} + \frac{\partial}{\partial_z}(\rho F_z)]$
+    \item $rot \vec{F} = \frac{1}{\rho} \begin{vmatrix}
+        e_\rho & e_\theta & e_z \\
+        \frac{\partial}{}
+    \end{vmatrix}$
+\end{itemize}
+
 \section{Examples}
 
 \paragraph{Given $\vec{r}t = <6+3\sin t, 9, 4+3\cos t>$, can we determine it's a circle?}
@@ -2275,6 +2316,52 @@ where t = y as a parameter}
 \begin{gather}
     \int_{0}^{2\pi} \sqrt{(-r \sin t)^2 + (r \cos t)^2} \to \int_{0}^{2\pi} r dt = 2 \pi r
 \end{gather}
+
+\section{First exam summary}
+you have to know:
+
+--------------------------------------------------------------------------
+\begin{itemize}
+    \item \begin{itemize}
+        \item Proyection of a vector over another
+        \item Cross product
+        \item Determinants
+        \item Area of a triangle | volume of a parallelepiped
+        \item spherical and cyllindrical coordinates
+        \item n-dimensional Spaces
+    \end{itemize}
+    ------------------------------------------------------------
+    \item \begin{itemize}
+        \item Surfaces and how to draw them
+        \item limits f(x,y)
+        \item Derivatives *
+        \item Tangent lines and Tangent planes (how to find and define them)
+        \item explicit and implicit functions
+        \item differentiability criteria
+        \item Chain Rule *
+        \item implicit differentiation
+        \item directional derivatives
+    \end{itemize}
+    ------------------------------------------------------------
+    \item \begin{itemize}
+        \item Taylor's Theorem (grade 2 or less.)
+        \item Local and Absolute extremes of a function *
+        \item Lagrange's Theorem (Restricted)
+        \item Implicit function theorem
+    \end{itemize}
+    ------------------------------------------------------------
+    \item \begin{itemize}
+        \item Vectorial Fields
+        \item Arc length *
+        \item Flux Vectorial theorems
+    \end{itemize}
+\end{itemize}
+--------------------------------------------------------------------------
+
+\textit{* for EXTREMELY POSSIBLE THEMES}
+
+If you haven't taken it, just get a few of my guides and do the best you can, wherever i am, i wish 
+you the best of luck!
 
 % Simply upload additional images Heading5.jpg, Heading6.jpg etc. into the pictures folder
 

@@ -1677,6 +1677,31 @@ $g(x,y,z) = k$ then for a plane P:
     \vec{\triangledown} f(x_0,y_0,z_0) = 0 \forall \vec{u}\\
 \end{gather}
 
+Imagine the following function:
+
+$$ z =  x^2 + xy + y^2 $$
+
+with every point being part of $\mathbb{R}^2$, if we were to find local minimums and maximums,
+therefore:
+
+\begin{gather}
+    f(x,y) =  x^2 + xy + y^2 \\
+    \partial_x = 2x + y\\
+    \partial_y = x + 2y\\
+    \begin{cases}
+        2x + y = 0\\
+        x + 2y = 0
+    \end{cases}
+    \implies \begin{pmatrix}
+        2 & 1 \|\ 0\\
+        1 & 2 \|\ 0\\
+    \end{pmatrix}\\
+    x=0 ; y=0\\
+    (0,0)
+\end{gather}
+
+from there, we can imagine a Hessian matrix.
+
 \section{Implicit function theorem}
 
 Let a function 'F(x,y) = 0' that is the implicit equation of a curve in xy;
@@ -2039,6 +2064,44 @@ Does this function have a local inverse near $(x,y) = (0,1)$?}
 
 There is no solution for any values. No points are formed due to the Jacobian having a determinant of 0
 
+\paragraph*{Find the maximum and minimum values in $z=x^2+xy+y^2$ in the disk
+$x^2+y^2\leq 2$}
+\begin{gather}
+    <<\text{in the interior } x^2 + y^2 < 2>>\\
+    f_x = 2x+y\\
+    f_y = x+2y\\
+    f_x = f_y = 0 \implies (x,y)=(0,0)\\
+    <<\text{on the border } x^2 + y^2 = 2>>\\
+    f(x,y) = x^2 + xy + y^2\\
+    g(x,y) = \text{ restriction function}\\
+    g(x,y) = x^2 + y^2 = 2\\
+    g(x,y) = 2\\
+    \begin{cases}
+        \nabla f(x,y) = \lambda \nabla g(x,y)\\
+        g(x,y) = 2
+    \end{cases}\\
+    \begin{cases}
+        f_x = \lambda g_x\\
+        f_y = \lambda g_y\\
+        g(x,y) = 2
+    \end{cases} \implies \begin{cases}
+        2x+y = \lambda 2x\\
+        x+2y = \lambda 2y\\
+        x^2+y^2=2\\
+    \end{cases} \\
+    < \ Case \ 1: x = 0 \>\\
+    2(0)+y = \lambda 2 (0)\\
+    y = 0\\
+    BUT: \ 0^2+0^2 \neq 2\\
+    False\\
+    < \ Case \ 2: x \neq 0 \ >\\
+    \lambda = 1 + \frac{2x+y}{2x}\\
+    x + 2y = (1 + \frac{2x+y}{2x} 2y)\\
+    x = \frac{y^2}{x}\\
+    x^2 = y^2
+\end{gather}
+
+%--CHAPTER 6--
 \chapter{Functions with vectorial values}
 
 \section{Trajectories and Velocity}

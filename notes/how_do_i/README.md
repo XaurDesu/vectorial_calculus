@@ -1,0 +1,3 @@
+# ...But how do i?...
+
+This section has a bunch of explications for different, important operations in calculus, if you don't want the whole thing, but rather just how to do a specific thing, just come here.

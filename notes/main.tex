@@ -2176,12 +2176,43 @@ We can say this is, of course, a gradient, and for gradients we can say:
 Much like this gradient allows us to operate fields, there exists two other operators: divergence and 
 rotation.
 
-\subsubsection*{Divergence}
+\subsubsection{Divergence}
 \begin{gather}
     \vec{F} = F_n i + F_n j + F_n k\\
     div \vec{F} = \vec{\nabla} \cdot \vec{F} = \frac{\partial F_1}{\partial x} + \frac{\partial F_2}{\partial y} + \frac{\partial F_3}{\partial z}
 \end{gather}
 
+given $\vec{F}$ is a field that measures velocity, divergence can be either:
+
+\begin{gather}
+    \vec{\nabla} \cdot \vec{F} = \begin{cases}
+        = 0 \\
+        > 0 \ expands\\
+        < 0 \ contracts \\
+    \end{cases}
+\end{gather}
+This expression will measure the velocity for which a fluid flows to a specific point, either avoiding, or being attracted, to it.
+
+if $\vec{F}$ such as $\vec{F} = 0$, then $\vec{F}$ is uncompressible, as in, it doesn't compress. (do not confuse this concept with an uncomprehensible shape).
+
+\subsubsection{Rotational operations }
+
+Given two vectorial fields, we can say about its rotation:
+
+\begin{gather}
+    rot \vec{v} = \vec{\nabla} x \vec{F} = \begin{vmatrix}
+        i & j & k \\
+        \frac{\partial}{\partial_x} & \frac{\partial}{\partial_y} & \frac{\partial}{\partial_z} \\
+        F_1 & F_2 & F_3
+    \end{vmatrix}
+\end{gather}
+
+this, given it is a cross product, we can also write this as:
+
+
+\begin{equation}
+    -i (\frac{\partial F_3}{\partial_y}-\frac{\partial F_2}{\partial_z}) + j(\frac{\partial F_1}{\partial_z} - \frac{\partial F_3}{\partial_x}) + k (\frac{\partial F_2}{\partial_x} - \frac{\partial F_1}{\partial_y})
+\end{equation}
 \section{Examples}
 
 \paragraph{Given $\vec{r}t = <6+3\sin t, 9, 4+3\cos t>$, can we determine it's a circle?}

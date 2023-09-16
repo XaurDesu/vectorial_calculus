@@ -2467,10 +2467,18 @@ any function that's continuous in a closed and bound domain can be integrated, i
 given a continuous f with a closed and bound 'D' domain: then:
 
 \begin{equation}
-    \underbrace{\int \int}_{D} f(x,y) dA = \int_a^b f(x,y) dy dx
+    \underbrace{\int \int}_{D} f(x,y) dA = \int_a^b f(x,y) dy dx = \int_c^d \int_{a(y)}^{b(g)} f(x,y) dxdy
 \end{equation}
 
+and we can affirm:
+\begin{equation}
+    f: D \subseteq \mathbb{R}^2 \to \mathbb{R}
+\end{equation} Has a discontinuity set called S, with an area of zero. If every line parallel to the axis crosses S, in maximum
+finite points, then:
 
+\begin{equation}
+    \underbrace{\int \int}_{D} fdA = \int_a^b \int_{\phi_1}^{\phi_2} f(x,y) dydx
+\end{equation}
 %----------------------------------------------------------------------------------------
 %	References
 %----------------------------------------------------------------------------------------

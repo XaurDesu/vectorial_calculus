@@ -2439,6 +2439,38 @@ given:
     R = [a , b] x [c,d]
 \end{gather}
 
+Then:
+
+\begin{gather}
+    \underbrace{\sum_{j=1}^m \sum_{k=1}^n f(x_j,y_k) \delta x_j \delta y_k
+    }_{\text{riemann sum}}
+\end{gather}
+
+theorem 1
+
+any function that's continuous in a closed and bound domain can be integrated, i.e.
+\begin{equation}
+    \int \int f(x,y) dA \ exists \in D
+\end{equation}
+
+\subsection{Properties}
+
+\begin{itemize}
+    \item Linearity: $\int \int (f+g) d A = \underbrace{\int \int}_{D} fdA + \underbrace{\int \int}_{D} gdA$:
+    \item $\underbrace{\int \int}_{D} c fdA = c \underbrace{\int \int}_{D} fdA$
+    \item Monotony: $f(x,g) \geq g(x,g) \implies \underbrace{\int \int}_{D} f(x,y)dA \geq \underbrace{\int \int}_{D} g(x,y)dA$
+    \item $|\underbrace{\int \int}_{D} f dA| \leq \underbrace{\int \int}_{D} |f| dA$
+    \item $D_1 \cap D_2 = \varnothing \lor \ Curve $ 
+\end{itemize}
+
+\section{Fubini's Theorem}
+given a continuous f with a closed and bound 'D' domain: then:
+
+\begin{equation}
+    \underbrace{\int \int}_{D} f(x,y) dA = \int_a^b f(x,y) dy dx
+\end{equation}
+
+
 %----------------------------------------------------------------------------------------
 %	References
 %----------------------------------------------------------------------------------------

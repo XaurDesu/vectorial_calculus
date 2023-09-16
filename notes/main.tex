@@ -2144,7 +2144,7 @@ a vector for every point $\vec{F}(\vec{x})$
 
 For example, given an implicit surface F(x,y,z) = 0, we could find a tangent plane to every 
 
-A vectorial field is conservative if there exists a scalar 'f' function ($f: \mathbb{R} \ to \mathbb{R}$)
+A vectorial field is conservative if there exists a scalar 'f' potential function ($f: \mathbb{R} \ to \mathbb{R}$)
 such as: 
 $\vec{F} = \vec{\nabla f} \cdot f $ is a potential function.
 
@@ -2236,8 +2236,49 @@ remembering cylindrical coordinates:
     \text{\textit{Cartesian to Cylindrical}}
 \end{gather}
 
-\subsection{First theorem}
+\subsection{Spherical coordinates}
 
+We already know how to get spherical coordinates:
+
+
+\begin{gather}
+    \vec(\alpha) =
+    \begin{cases}
+        \alpha_x = \rho \sin \phi \cos \theta \\
+        \alpha_y = \rho \sin \phi \sin \theta \\
+        \alpha_z = \rho \cos \phi
+    \end{cases}
+    \text{\textit{Spherical to cartesian}} \\ 
+    \vec(\alpha) =
+    \begin{cases}
+        \rho = \sqrt{x^2 + y^2 + z^2} \\
+        \theta =  \arctan(\frac{y}{x}) \\
+        \phi = \arccos(\frac{z}{\rho})
+    \end{cases}
+    \text{\textit{Cartesian to Spherical}}
+\end{gather}
+
+We can then assume:
+
+\begin{gather}
+    e_\theta = \frac{-yi + xj}{\sqrt{x^2+y^2}} = -\sin \theta i + \cos \theta j\\
+    e_\rho = \frac{-yi + xj + zk}{\sqrt{x^2+y^2+z^2}} = \sin \phi \cos \theta i + \sin \phi \sin \theta j + \cos \theta k \\
+    e_\phi = \frac{-xz i - yz j + (x^2+y^2)k}{\sqrt{x^2+y^2} \sqrt{x^2+y^2+z^2}'} 
+\end{gather}
+
+we can then, imagine as a theorem:
+
+\begin{gather}
+    \nabla F : = \frac{\partial f}{\partial \rho} e_\rho = \frac{1}{\rho} \frac{\partial f}{\partial \phi} e_\phi +
+\end{gather}
+
+\subsection{Identity list}
+
+\begin{gather}
+    \nabla ( \vec{F} \cdot \vec{S} ) = (\vec{F} \cdot \vec{\nabla}) \vec{S} + (\vec{S} \cdot \vec{\nabla}) \vec(F)
+\end{gather}
+
+\subsection{First theorem}
 
 given:
 \begin{equation}
@@ -2368,6 +2409,35 @@ you the best of luck!
 % \chapterimage{Heading5.jpg}
 % \chapter{Third Set of Questions}
 
+
+\chapter{Double Integration}
+\section{Cavalier principle}
+Given an object, we can integrate the volume as:
+
+\begin{equation}
+    volume\ = \ \int_a^b A(x) dx
+\end{equation}
+
+This can also be seen as:
+
+\begin{equation}
+    volume\ = \ \int_a^b [\int_c^d f(x,y) dy] dx
+\end{equation}
+
+This is called an \textbf{iterated integral}. We can get this sort of expression from 
+
+
+\begin{gather}
+    \int \int f(x,y) dxdy\\
+    R = [a , b] x [c,d]
+\end{gather}
+
+\section{Double integral over a rectangle}
+given:
+
+\begin{gather}
+    R = [a , b] x [c,d]
+\end{gather}
 
 %----------------------------------------------------------------------------------------
 %	References

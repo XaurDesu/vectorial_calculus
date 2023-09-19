@@ -2444,6 +2444,7 @@ Then:
 \begin{gather}
     \underbrace{\sum_{j=1}^m \sum_{k=1}^n f(x_j,y_k) \delta x_j \delta y_k
     }_{\text{riemann sum}}
+    \\ \underbrace{\int \int}_D f(x,y) dA
 \end{gather}
 
 theorem 1
@@ -2460,7 +2461,7 @@ any function that's continuous in a closed and bound domain can be integrated, i
     \item $\underbrace{\int \int}_{D} c fdA = c \underbrace{\int \int}_{D} fdA$
     \item Monotony: $f(x,g) \geq g(x,g) \implies \underbrace{\int \int}_{D} f(x,y)dA \geq \underbrace{\int \int}_{D} g(x,y)dA$
     \item $|\underbrace{\int \int}_{D} f dA| \leq \underbrace{\int \int}_{D} |f| dA$
-    \item $D_1 \cap D_2 = \varnothing \lor \ Curve $ 
+    \item $D_1 \cap D_2 = \varnothing \lor \ Curve \implies \underbrace{\int \int}_{D_1 \cup D_2} = \underbrace{\int \int}_{D_1} + \underbrace{\int \int}_{D_2} $ 
 \end{itemize}
 
 \section{Fubini's Theorem}
@@ -2479,6 +2480,27 @@ finite points, then:
 \begin{equation}
     \underbrace{\int \int}_{D} fdA = \int_a^b \int_{\phi_1}^{\phi_2} f(x,y) dydx
 \end{equation}
+
+\section{Double Integrals over more general regions}
+
+If $D = \{ (x,y) : a \leq x \leq b, \phi \leq y \leq \phi_2(x)  \}$
+then x is elemental. If $D = \{ (x,y) : c \leq y \leq d, \phi \leq x \leq \phi_2(y)  \}$
+then y is elemental.
+
+\section{Examples}
+\paragraph{Find $\int \int 2y dA$ where $$D: \begin{cases}
+    0 \leq x \leq 2\\
+    0 \leq y \leq 4
+\end{cases}$$}
+
+\paragraph{Find $\int \int (x+y)^2 \ dA$ where x is on (0,2) and y is on (0,1)}
+\begin{gather}
+    \int \int (x+y)^2 \ dA + \int_0^2 \int_0^1 (x+y)^2\\
+    \int_0^2 \frac{(x+y)^3}{3} \between_0^1 \ dx \\
+    \int_0^2 \{ \frac{(x+1)^3}{3} - \frac{x^3}{3} \} dx = \frac{(x+1)^4}{3 \cdot 4} - \frac{x^4}{3 \cdot 4} 
+\end{gather}
+
+\paragraph*{D being bound by the x axis, y=x-2, $y = \sqrt{x}.$, find A(D)}
 %----------------------------------------------------------------------------------------
 %	References
 %----------------------------------------------------------------------------------------

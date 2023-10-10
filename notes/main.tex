@@ -2494,7 +2494,7 @@ Sometimes, it is easier to integrate in a specific way, or even, it might be pos
 
 assuming a f:D is continuous and goes to R, then: 
 
-$$\int ]int f(x,y) \ dA $$
+$$\int \int f(x,y) \ dA $$
 
 \section{Examples}
 \paragraph{Find $\int \int 2y dA$ where $$D: \begin{cases}
@@ -2512,6 +2512,88 @@ $$\int ]int f(x,y) \ dA $$
 \paragraph*{D being bound by the x axis, y=x-2, $y = \sqrt{x}.$, find A(D)}
 
 \paragraph*{$$\int \int (1 + 2y) \ dA $$}
+
+\chapter{Triple Integrals}
+
+Just kidding about not touching triple integrals, we actually have to do that, so let:
+
+\begin{equation}
+    \underbrace{\int\int\int}_{B} f(x,y,z) dV = \lim_{||p|| = 0} \sum_{}^{max} f(X_i,Y_j,Z_k); \Delta x_i, \Delta y_j, \Delta z_k
+\end{equation}
+
+If such limit exists. It's of notice that such limit will exist if B is a closed and bound set, and f is continuous.
+If the limit doesn't exist, then a triple integral does not exist either.
+
+\section{Function geometry for functions of the type $\mathbb{R}^2 \to \mathbb{R}^2$}
+
+T is a one-to-one function if the function is inyective. Being inyective can be defined as:
+
+$T_x = T_y \implies x=y$
+
+And $ A \to B $ is over B if $ \forall_y \in B \exists x \in A : y = T(x) $
+
+\paragraph*{Theorem}
+For a matrix to be one-to-one over it's domain:
+
+Given A as a matrix in (for the most simple example) $\mathbb{R}^2$, $det A \neq 0$ and $T(x) = Ax$ then T transforms parallelograms in parallelograms, and
+vertices in vertices. 
+
+Furthermore, if $T(R)$ is a parallelogram, then R must be a parallelogram.
+
+\paragraph*{Example application}
+Imagine: 
+
+\begin{equation}
+    T: \mathbb{R}^3 \to \mathbb{R}^3; T(u,v,w) = (2u, 2u+3v, 3w)
+\end{equation}
+
+We can write the following matrix:
+
+\begin{equation}
+    \begin{vmatrix}
+        2 & 0 & 0 \\
+        2 & 3 & 1 \\
+        0 & 0 & 3
+    \end{vmatrix} \begin{pmatrix}
+        u \\
+        v \\ 
+        w 
+    \end{pmatrix}
+\end{equation}
+
+we can calculate the determinant and arrive at $detA = 18$m and a Volume of 'D', therefore marked as 18 
+
+Keep in mind, even though every operation so far in this section is linear, not every transformation is linear in this way. 
+
+
+
+\section{Examples}
+\paragraph{Given 'B' bound by x = 0 ; y = 0 ; z = 0, x + y + z = 1, find the triple integral.}
+\begin{gather}
+    \underbrace{\int\int\int}_{B} z dV
+\end{gather}
+
+This will be a symetrical equation, so we don't really mind the integration order. However, we'll write
+limits depending on each other, as follows:
+
+\begin{gather}
+    0 \leq x \leq 1 \\
+    0 \leq y \leq 1-x\\
+    0 \leq z \leq 1-x-y\\
+\end{gather}
+
+Now, we write the integral:
+
+\begin{gather}
+    \int_0^1 \int_0^{1-x} \int_0^{1-x-y} z \ dz dy dx\\
+    \int_0^1 \int_0^{1-x} [\frac{z^2}{2}]|_0^{1-x-y} \ dy dx \\
+    \int_0^1 \int_0^{1-x} \frac{(1-x-y)^2}{2} \ dy dx \\
+    < \int kx = k \int x >\\
+    \frac{1}{2} \int_0^1 \int_0^{1-x} 1-x-y \ dy dx \\
+    \frac{1}{2} \int_0^1 \int_0^{1-x} 1-x-y \ dy dx \\
+    - \frac{1}{24} - (1)\\
+    \frac{1}{24}
+\end{gather}
 
 %----------------------------------------------------------------------------------------
 %	References

@@ -2565,8 +2565,35 @@ we can calculate the determinant and arrive at $detA = 18$m and a Volume of 'D',
 
 Keep in mind, even though every operation so far in this section is linear, not every transformation is linear in this way. 
 
+\section{Variable change theorem}
 
+\subsection{Two-dimensional variable change (Double integrals)}
 
+Let
+\begin{equation}
+    \int_a^b f(x,y) \frac{dx}{du} du = \int_{x(a)}^{x(b)} f(x) dx
+\end{equation}
+
+Let $I^* = [a,b]$; where I is an image of $I^*$
+we can rewrite as:
+
+\begin{equation}
+    \int_{I^*} f(x(u)) |\frac{dx}{du}| du =\int_{I^*} f(x) dx  
+\end{equation}
+
+\paragraph{theorem}
+
+Let D*, D being regions in the plane 'uv' and the plane 'xy'. Let $T:D^* \to D$
+of the type C', being one-to-one in D* over D and defined by T(u,v) = (x(u,v),y(u,v));
+for any integrable function $f():D\to \mathbb{R}$ we get that:
+
+\begin{equation}
+    {\int\int}_D f(x,y) dxdy = {\int\int}_{D^*} f (x(u,v) ; y(u,v)) |J(u,v)| dudv\\
+\end{equation}
+
+Where the Jacobian determinant is equal to $\frac{\partial(x,y)}{\partial(u,v)}$ and denoted as $ J(u,v) $
+
+\subsection{}
 \section{Examples}
 \paragraph{Given 'B' bound by x = 0 ; y = 0 ; z = 0, x + y + z = 1, find the triple integral.}
 \begin{gather}
@@ -2593,6 +2620,26 @@ Now, we write the integral:
     \frac{1}{2} \int_0^1 \int_0^{1-x} 1-x-y \ dy dx \\
     - \frac{1}{24} - (1)\\
     \frac{1}{24}
+\end{gather}
+
+\paragraph{Find ${\int\int}_D e^{\frac{x+y}{x-y}} dxdy$ where D is a trapezoidal region:}
+
+Note that the function on its current state is impossible to solve, so we should probably try and change variables. This will simplify the expressions.
+
+\begin{gather}
+    u = x+y \\
+    v = x-y \\
+    x = \frac{1}{2} u+v \\
+    y = \frac{1}{2} (u-v)\\
+    J = \begin{vmatrix}
+    \frac{1}{2} & \frac{1}{2} \\
+    \frac{1}{2} & -\frac{1}{2} 
+    \end{vmatrix}=0
+\end{gather}
+
+From this, we can find the region D, bound as:
+\begin{gather}
+    y=0 ; x-y= 2 ; x-y =1 ; x-y = 1 ; 
 \end{gather}
 
 %----------------------------------------------------------------------------------------

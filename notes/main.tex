@@ -2596,6 +2596,25 @@ Where the Jacobian determinant is equal to $\frac{\partial(x,y)}{\partial(u,v)}$
 \subsection{Variable change for triple integrals}
 
 let D* regions in $\mathbb{R}^3$; and $T: D* \to D$ of 'C' 
+we can imagine:
+
+$$D*, D, T:D* \to D; T (u,v); T(u,v) = (x(u,v),y(u,v))dudv$$
+
+This also implies:
+
+\begin{gather}
+    {\int\int}_D f(x,y) dxdy = {\int\int}_D* f(x(u,v), y(u,v)) |J(u,v)| dudv \\
+    {\int\int}_D f(x,y) dxdy = {\int\int}_D* f(x(u,v), y(u,v)) \frac{\partial (x,y)}{\partial (u,v)} dudv
+\end{gather}
+
+\section{Average value}
+
+let: 
+\begin{equation}
+    f D \in \mathbb{R}^2 \to \mathbb{R} \\
+\end{equation}
+
+
 
 
 \section{Examples}

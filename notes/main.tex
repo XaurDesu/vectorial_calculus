@@ -2614,6 +2614,49 @@ let:
     f D \in \mathbb{R}^2 \to \mathbb{R} \\
 \end{equation}
 
+\section{Center of Mass}
+
+imagining:
+
+\begin{gather}
+    x_2 \leq x \leq x_1\\
+    x_1 m_1 + x_2 + m_2 = 0
+\end{gather}
+
+To find equilibrium in a system, we should find the moment where the total momentum
+equals zero, this can be expressed mathematically as:
+
+\begin{gather}
+    x = \frac{x_1 m_1 + m_2 x_2}{m_1 + m_2}
+\end{gather}
+
+when accounting for multiple bodies, this can be written as:
+
+\begin{gather}
+    x = \frac{\sum_{i=1}^n x_i m_i}{\sum_{i=1}^n m_i}
+\end{gather}
+
+\subsection{Two-dimensional center of mass}
+
+When a system is two-dimensional, we can divide the definition depending on wether it is a continuous or a concrete case.
+
+For the former:
+
+\begin{gather}
+    x = \frac{\sum_{i=1}^n x_i m_i}{\sum_{i=1}^n m_i} ; \ y = \frac{\sum_{i=1}^n y_i m_i}{\sum_{i=1}^n m_i}
+\end{gather}
+
+And for a continuous case:
+
+\begin{gather}
+    x = \frac{{\int\int}_D x \rho(x,y) dxdy}{{\int\int}_D \rho(x,y) dxdy} ; \ y = \frac{{\int\int}_p y \rho(x,y) dxdy}{{\int\int}_D \rho(x,y) dxdy}
+\end{gather}
+
+This second definition lets us also account for three-dimensional applications of this definition, as we would make this a triple integral.
+
+\begin{gather}
+    x = \frac{{\int\int\int}_D x \rho(x,y,z) dxdydz}{{\int\int\int}_D \rho(x,y,z) dxdydz}
+\end{gather}
 
 
 

@@ -43,7 +43,7 @@
 %	SET THESE VARIABLES!
 %----------------------------------------------------------------------------------------
 
-\def\mytitle{ Vectorial Calculus } % Title of the ILM project
+\def\mytitle{ Calc III } % Title of the ILM project
 \def\ILMCode{Adbridged, it seems.} % Unique code for the ILM project
 
 \def\author{Jaime Andres Torres B.} % Your name.. 
@@ -2513,6 +2513,79 @@ $$\int \int f(x,y) \ dA $$
 
 \paragraph*{$$\int \int (1 + 2y) \ dA $$}
 
+\paragraph*{\textbf{QUIZ PROBLEM:} find the area on $\frac{1}{1+x^2+y^2}$ if $-1 \leq x \leq 1$ and $-1 \leq y \leq 2$}
+This can be solved by bounding the function on an interval [a,b]
+\begin{gather}
+    l(a,b) \cdot \min(a,b) f \leq \int_a^b f(x) \leq l(a,b) \cdot \max(a,b) f\\
+    f(x) \leq \max_{(a,b)}f = \max_{a,b} \int_{a}^{b} 1 dx\\
+\end{gather}
+If we take this concept and pass it to a third dimensional context, instead on an area, we can do a volume as follows:
+\begin{gather}
+    z = f(x,y)\\
+    {\int\int}_{R} f(x,y) dA \\
+    A(R) \cdot \min_{R} f \leq {\int\int}_{R} f(x,y) dA \leq A(R) \cdot \max_{R} f \\
+\end{gather}
+
+And from here, we might use lagrange multipliers to try and find a minimum and a maximum value, so let's try and now make a less complicated form of such rules work on our problem:
+
+\begin{gather}
+    f(x,y) = \frac{1}{1+x^2+y^2}\\
+    -1 \leq x \leq 1 \\
+    -1 \leq y \leq 2 \\
+    0 \leq x^2 \leq 1 \\
+    0 \leq y^2 \leq 4 \\
+    0 \leq x^2 + y^2 \leq 5 \\
+    1 \leq x^2 + y^2 + 1 \leq 6 \\
+    1 \geq \frac{1}{x^2 + y^2 + 1} \geq \frac{1}{6}
+\end{gather}
+
+now, we integrate in the three inequalities:
+
+\begin{equation}
+    1 = \frac{1}{6} A(R) \leq {\int\int}_R \frac{1}{x^2+y^2+1} \leq A(R) = 6
+\end{equation}
+
+\paragraph*{Solve $\int_0^1(\int_y^1 \sin(x^2)dx)dy$}
+
+This is a type II function; to solve it we must bound it:
+
+\begin{gather}
+    y \leq x \leq 1 \\
+    0 \leq y \leq 1
+\end{gather}
+
+And now, we'll have to make this a type 1 function. Such an endeavour would be written as:
+
+\begin{gather}
+    0 \leq x \leq 1 \\
+    0 \leq y \leq x
+\end{gather}
+
+The reason we can do it is because we are describing the exact same figure, but written differently. Now, we evaluate:
+
+\begin{gather}
+    \int_0^1 \int_0^x \sin(x^2) dx dy \\
+    \int_0^1 x \cdot \sin(x^2) dx \\
+    \begin{cases}
+        u = x^2\\
+        du = 2x \ dx
+    \end{cases}
+    \int_{u(o)}^{u(1)} \sin{u} \frac{du}{2} = (\frac{-\cos{u}}{2})|_0^1 = \frac{-\cos{1}}{2} + \frac{1}{2}\\
+    \frac{-\cos{1}}{2} + \frac{1}{2}
+\end{gather}
+
+\paragraph*{Solve $\int_{0}^9\int_0^{\sqrt{y}} dxdy$}
+\begin{gather}
+    \begin{cases}
+        0 \leq x \leq \sqrt{y} \\
+        0 \leq y \leq 9
+    \end{cases} \\
+    y = x^2 \\
+    y = 9 \\
+    x^2 = 9 \\
+    x = 3 \\
+    A = \int_0^{-3} (1-x^2) dx
+\end{gather}
 \chapter{Triple Integrals}
 
 Just kidding about not touching triple integrals, we actually have to do that, so let:

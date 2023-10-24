@@ -2812,11 +2812,39 @@ however, this can be generalized to:
     \int_c \vec{F}(\vec{r}(t_i)) \cdot \Delta \vec{r} (t_i)
 \end{equation}
 
+This can also gives us arc length, it is of note 
+
 \section{Parametrizized surfaces}
 
 Imagining a trajectory, defined as $\vec{r}(t) = <x(t),y(t),z(t)>$ we can
 
+If we have a conservative field such as $\vec{F} = \Delta f$
+then $\int_c \vec{r} d\vec{r} = f(\vec{r}(b)) - f(\vec{r}(a))$
 
+\section{Area of a Surface}
+
+\begin{equation}
+    {\int\int}_D ||\vec{r}_u x \vec{r}_v|| dA 
+\end{equation}
+
+However, if a surface is implicit we can say:
+
+\begin{gather}
+    \vec{r}_x x \vec{r}_y = \begin{pmatrix}
+        1\\0\\f_x
+    \end{pmatrix} x\\ \begin{gather}
+        0\\1\\f_y
+    \end{gather} = \begin{pmatrix}
+        - f_x \\ - f_y = 1
+    \end{pmatrix}\\
+    ||\vec{r}_x x \vec{r}_y|| = \sqrt{1 + f_x^2 + f_y^2}
+\end{gather}
+
+from this we gather:
+
+\begin{gather}
+    A(S) = {\int\int}_D \sqrt{1 + f_x^2 + f_y^2} dA
+\end{gather}
 \section{Examples}
 
 \paragraph*{Find: $\int_C xy dx + x^2 dy$ where $ C \in [[2,1],[4,1],[4,5]]$}
@@ -2839,6 +2867,32 @@ Imagining a trajectory, defined as $\vec{r}(t) = <x(t),y(t),z(t)>$ we can
 \end{gather}
 
 \paragraph*{find a parametrization of a surface}
+
+\paragraph*{Find the tangent plane to $\begin{cases}
+x = u^2 + 1 \\
+y = v^3 + 1 \\
+z = u+v
+\end{cases}$}
+
+\begin{gather}
+    \vec{r}_u (u_0, v_0) x \vec{r}_v (u_0, v_0)\\
+    3 = u + 1 \implies u = 2\\
+    2 = v^3 + 1 \implies v = 1\\
+    \vec{r}_u (u_0, v_0) x \vec{r}_v (u_0, v_0) = \begin{pmatrix}
+        24 \\ 0 \\ 1
+    \end{pmatrix}|_{(2,1)}\
+    x\begin{pmatrix}
+        0 \\3v^2 \\ 1
+    \end{pmatrix}|_{(2,1)}
+    = \begin{pmatrix}
+        4 \\0 \\1
+    \end{pmatrix} x \begin{pmatrix}
+        0 \\3\\1
+    \end{pmatrix} \implies \begin{pmatrix}
+        -3 \\ -4 \\ 12
+    \end{pmatrix}\\
+    <-3,-4,12> \cdot <x,y,z> = <-3,-4,12> \cdot <5,2,3>
+\end{gather}
 
 %----------------------------------------------------------------------------------------
 %	References

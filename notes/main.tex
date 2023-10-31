@@ -2496,21 +2496,6 @@ assuming a f:D is continuous and goes to R, then:
 
 $$\int \int f(x,y) \ dA $$
 
-\section{Curve Integrals}
-
-It is possible to integrate over a curve. The physical meaning might change depending on the specifics;
-So let:
-
-$$ Curve \ : \ \sigma(t) ; a \leq t \leq b$$
-
-We can say that for example, if we had a curve 
-
-$$\sigma(t) = (\overbrace{2\cos(t)}^{x(t)}, \overbrace{2\sin(t)}^{y(t)}) $$
-
-We can probably parametrize t such as an Area might be found
-
-$$A = \int f ds = \int_a^b f(\sigma(t)) \cdot ||\sigma ' (t)|| dt $$
-
 \section{Examples}
 \paragraph{Find $\int \int 2y dA$ where $$D: \begin{cases}
     0 \leq x \leq 2\\
@@ -2838,10 +2823,38 @@ This can also gives us arc length, it is of note
 
 \section{Parametrizized surfaces}
 
+If $S, \vec{r}(u,v)$, we can define a revolution surface as 
+
+$\begin{cases}
+x = x \\
+y = f(x)\cos{\theta}\\
+z = f(x)\sin{\theta}    
+\end{cases} ; a \leq x \leq b; 0 \leq \theta 2 \pi$
+
+and from then, we can check for smoothness as:
+
+$ \vec{r}_u x \vec{r}_v \neq \vec{0} $
+
+If 'S' is smooth, we have a tangent plane. Otherwise there might be a surface, but it will be more complex.
+
+We can calculate the area of a surface of this kind as:
+
+\begin{equation}
+    {\int\int}_D ||\vec{r}_u \ x \ \vec{r}_v|| dA
+\end{equation}
+
+If we have an imlicit surface such as $z = f(x,y)$ this can be seen as:
+
+\begin{equation}
+    {\int\int}_D \sqrt{1 + f_x^2 + f_y^2} dA
+\end{equation}
+
 Imagining a trajectory, defined as $\vec{r}(t) = <x(t),y(t),z(t)>$ we can
 
 If we have a conservative field such as $\vec{F} = \Delta f$
 then $\int_c \vec{r} d\vec{r} = f(\vec{r}(b)) - f(\vec{r}(a))$
+
+
 
 \section{Area of a Surface}
 
@@ -2867,6 +2880,32 @@ from this we gather:
 \begin{gather}
     A(S) = {\int\int}_D \sqrt{1 + f_x^2 + f_y^2} dA
 \end{gather}
+
+
+\section{Curve Integrals}
+
+Let:
+
+$\int\int f dS$ -> area of a surface
+
+then it equals:
+
+${\int\int}_D f(\vec{r}(u,v)) ||\vec{r}_u x \vec{r}_v|| dA$
+
+It is possible to integrate over a curve. The physical meaning might change depending on the specifics;
+So let:
+
+$$ Curve \ : \ \sigma(t) ; a \leq t \leq b$$
+
+We can say that for example, if we had a curve 
+
+$$\sigma(t) = (\overbrace{2\cos(t)}^{x(t)}, \overbrace{2\sin(t)}^{y(t)}) $$
+
+We can probably parametrize t such as an Area might be found
+
+$$A = \int f ds = \int_a^b f(\sigma(t)) \cdot ||\sigma ' (t)|| dt $$
+
+
 \section{Examples}
 
 \paragraph*{Find: $\int_C xy dx + x^2 dy$ where $ C \in [[2,1],[4,1],[4,5]]$}

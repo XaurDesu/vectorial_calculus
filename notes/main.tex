@@ -2972,9 +2972,68 @@ Given a 'S' surface oriented towards $\partial S$, a vectorial field $\vec{F} ; 
     = {\vec\vec}_S (\vec{\nabla} x \vec{F}) \cdot \vec{n} dS
 \end{gather}
 
+\section{Conservative Sets}
+
+
+
+\section{Fundamental theorem for line integrals}
+
+Let a conservative vectorial field that has a line integral, then we can affirm
+
+$$\int_S \vec{F} d\vec{r} = f(r(\vec{b})) - f(r(\vec{a}))$$
+
 \section{Examples}
 
+\paragraph*{Integrate the area of a given surface;}
+\begin{equation}
+    \begin{cases}
+        x = r \cdot \cos{\theta}\\
+        y = 2r \cdot \cos{\theta}\\
+        z = \theta    
+    \end{cases}; \\ 0 \leq r \leq 1 \\
+    0 \leq \theta \leq 2\pi
+\end{equation}
 
+From this, we can define the surface as:
+
+\begin{gather}
+    T(r, \theta) = (r \cos{\theta}, 2r\cos{\theta},\theta)\\
+    <\theta = 0>\\
+    T(r, \theta) = (r \cos{0}, 2r\cos{0},0)\\
+    \alpha(r) = (r, 2r, 0)\\
+    <r = t>\\
+    \alpha(t) =  (1,2,0) t\\  
+\end{gather}
+
+We can also get from other instantiations different values that might help us define the rest of the surface, such as:
+
+\begin{gather}
+    <r = 0>\\
+    T(r, \theta) = (0 \cos{\theta}, 2\cdot 0\cos{\theta},\theta)\\
+    \beta(\theta) = (0,0,1)\theta
+\end{gather}
+
+Now, let's take the non-zero extremes:
+
+\begin{gather}
+    <\theta = 2\pi>\\
+    (x,y,z) = (r,2r,2\pi) = \begin{pmatrix}
+        1\\2\\0
+    \end{pmatrix} r + \begin{pmatrix}
+        0\\0\\2\pi
+    \end{pmatrix}
+\end{gather}
+
+We can integrate as:
+
+\begin{gather}
+    \int \int_D 1 \cdot ||T_r x T_\theta|| dr d\theta\\
+    \int_0^{2\pi} \int_0^1 1 \cdot \sqrt{5 \cdot \cos^2{\theta}} dr d\theta\\
+    \int_0^1 dr \cdot \int_0^{2\pi} |\cos{\theta}| d\theta \cdot \sqrt{5}\\
+    \sqrt{5} \int_0^{2\pi} |\cos{\theta}| d\theta\\
+    4\sqrt{5} (\sin{\theta})|_0^{\frac{\pi}{2}}\\
+    4 \sqrt{5}
+\end{gather}
 
 
 %----------------------------------------------------------------------------------------

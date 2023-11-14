@@ -2972,15 +2972,49 @@ Given a 'S' surface oriented towards $\partial S$, a vectorial field $\vec{F} ; 
     = {\vec\vec}_S (\vec{\nabla} x \vec{F}) \cdot \vec{n} dS
 \end{gather}
 
-\section{Conservative Sets}
-
-
-
 \section{Fundamental theorem for line integrals}
 
 Let a conservative vectorial field that has a line integral, then we can affirm
 
 $$\int_S \vec{F} d\vec{r} = f(r(\vec{b})) - f(r(\vec{a}))$$
+
+\section{Conservative fields}
+
+As we know, a conservative field is $\vec{F}$ such as 
+$\vec{F} \implies \vec{\nabla} \vec{F} = 0$ and
+$\int_{x,y,z}^{x,y,z} \vec{F} dr$ is independent of trajectory.
+
+therefore, we can demonstrate:
+
+\begin{gather}
+    \vec{\nabla} \vec{F} = 0 \implies \int_{C_1} \vec{F} dr = \int_{C_2} \vec{F} dr\\
+    \int_{C_1} \vec{F} dr - \int_{C_2} \vec{F} dr = 0 \\
+    \int_{C_1 - C_2} \vec{F} dr = 0\\
+\end{gather}
+
+We can now use Stokes' Theorem to affirm that:
+
+\begin{gather}
+    {\int \int}_S
+\end{gather}
+
+\subsection{Equivalent conditions for a vectorial field.}
+
+\begin{itemize}
+    \item 
+\end{itemize}
+
+\section{Gauss' Divergence Theorem}
+
+For a final time.
+
+Let a vectorial field $\vec{F}$ that's smooth, closed, bound in a region, we can affirm:
+
+\begin{gather}
+    {\int \int}_S \vec{F} d\vec{S} = {\int \int \int}_R \vec{\nabla} \cdot \vec{F} dV 
+\end{gather}
+
+
 
 \section{Examples}
 
@@ -3034,7 +3068,6 @@ We can integrate as:
     4\sqrt{5} (\sin{\theta})|_0^{\frac{\pi}{2}}\\
     4 \sqrt{5}
 \end{gather}
-
 
 %----------------------------------------------------------------------------------------
 %	References
